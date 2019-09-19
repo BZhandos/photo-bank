@@ -4,6 +4,9 @@
     <h1><i class="fa fa-linkedin"></i>:
       <a target="_blank" href="https://www.linkedin.com/in/bazargaliyev-zhandos/">linkedin.com/in/bazargaliyev-zhandos</a>
     </h1>
+    <h1><i class="fa fa-github-square"></i>:
+      <a target="_blank" href="https://github.com/BZhandos"> Project samples</a>
+    </h1>
     <h1><i class="fa fa-crosshairs"></i>:
       <a target="_blank" href="https://hh.kz/resume/6143bc17ff01f83bee0039ed1f6e653655426f"> HeadHunter CV</a>
     </h1>
@@ -24,6 +27,7 @@ export default {
 <style scoped lang="scss">
   h1 {
     text-align: left;
+    padding-left: 10px;
     & a {
       color: #ff1d5e;
       text-decoration: none;

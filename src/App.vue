@@ -6,6 +6,7 @@
       <router-link to="/about">Links to CV</router-link>
     </div>
     <router-view/>
+    <p>Lazyload is coming soon..</p>
   </div>
 </template>
 <script>
