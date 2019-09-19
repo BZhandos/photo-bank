@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <back-button v-if="$route.path !== '/'" />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,7 +8,14 @@
     <router-view/>
   </div>
 </template>
-
+<script>
+import BackButton from './components/UI/BackButton'
+export default {
+  components: {
+    BackButton
+  }
+}
+</script>
 <style>
   body {
     background-color: black;

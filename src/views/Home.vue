@@ -6,9 +6,8 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import ListOfImages from '@/components/home/ListOfImages'
 import Search from '../components/home/Search'
+import ListOfImages from '@/components/home/ListOfImages'
 
 export default {
   name: 'home',
