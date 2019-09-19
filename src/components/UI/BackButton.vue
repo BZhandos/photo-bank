@@ -2,7 +2,7 @@
   <div class="arrow-wrapper"
        @click="goBackHandler()">
     <transition name="slidingOut">
-      <i v-if="visable"
+      <i v-if="visible"
         class="fa fa-chevron-left"></i>
     </transition>
   </div>
@@ -11,12 +11,12 @@
 export default {
   data () {
     return {
-      visable: true
+      visible: true
     }
   },
   methods: {
     goBackHandler () {
-      this.visable = false
+      this.visible = false
       window.setTimeout(() => {
         this.$router.push('/')
       }, 400)

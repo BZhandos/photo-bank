@@ -1,11 +1,20 @@
 <template>
-    <div class="search-wrap">
-      <form v-on:submit.prevent="search()">
+    <div class="search-wrap"
+          :class="{'error': empty}">
+      <form v-on:submit.prevent="checkEmptyHandler()">
         <input v-model="query">
+        <transition name="slide">
+          <div v-if="empty"
+               class="search-wrap__error">
+            <p>Searching field is empty. Enter something like
+              <span @click="someFun()">WALL-E</span>
+            </p>
+          </div>
+        </transition>
       </form>
       <div
         class="search-wrap-button"
-        @click="search()">
+        @click="checkEmptyHandler()">
         <i class="fa fa-search"></i> Search
       </div>
     </div>
@@ -15,11 +24,21 @@
 export default {
   name: 'Search',
   data: () => ({
-    query: ''
+    query: '',
+    empty: false
   }),
   methods: {
     search () {
       this.$router.push('/result/' + this.query)
+    },
+    checkEmptyHandler () {
+      if (this.query !== '') this.search()
+      else this.empty = true
+    },
+    someFun () {
+      let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/Whoa.mp3')
+      audio.play()
+      this.$router.push('/result/WALL-E')
     }
   }
 }
@@ -36,6 +55,13 @@ export default {
     width: 70%;
     margin: 10px;
   }
+  &__error {
+    & span {
+      color: yellow;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
   &-button {
     box-sizing: border-box;
     padding: 10px 15px;
@@ -49,6 +75,20 @@ export default {
     &:hover {
       background-color: #9eccff;
     }
+  }
+}
+.error input {
+  border: 1px solid red;
+}
+.slide-enter-active {
+  animation: slide-in 0.5s ease-out forwards;
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 </style>

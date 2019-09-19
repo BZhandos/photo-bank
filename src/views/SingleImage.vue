@@ -12,6 +12,7 @@
         <description :desc="singleImg"/>
       </div>
       <div class="tags">
+        <h3>Hashtags</h3>
         <span v-for="tag in singleImg.tags"
               @click="$router.push({ path: '/result/'+ tag.title})"
         >
@@ -56,12 +57,19 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  @media (max-width: 1080px) {
+    justify-content: start;
+  }
 }
 .tags {
   text-align: left;
   cursor: pointer;
   width: 90%;
   margin: 0 auto;
+  & h3 {
+    margin: 0;
+    color: #57800a;
+  }
   & span:hover {
     color: #9eccff;
   }

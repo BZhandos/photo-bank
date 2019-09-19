@@ -1,5 +1,32 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <loading/>
+    <h1><i class="fa fa-linkedin"></i>:
+      <a target="_blank" href="https://www.linkedin.com/in/bazargaliyev-zhandos/">linkedin.com/in/bazargaliyev-zhandos</a>
+    </h1>
+    <h1><i class="fa fa-crosshairs"></i>:
+      <a target="_blank" href="https://hh.kz/resume/6143bc17ff01f83bee0039ed1f6e653655426f"> HeadHunter CV</a>
+    </h1>
+    <h1><i class="fa fa-instagram"></i>:
+      <a target="_blank" href="https://www.instagram.com/bazargaliyev.zhandos/"> @bazargaliyev.zhandos</a>
+    </h1>
+    <h1><i class="fa fa-vk"></i>:
+      <a target="_blank" href="https://vk.com/zhandosmuratovich"> zhandosmuratovich</a>
+    </h1>
   </div>
 </template>
+<script>
+import Loading from '../components/UI/Loading'
+export default {
+  components: { Loading }
+}
+</script>
+<style scoped lang="scss">
+  h1 {
+    text-align: left;
+    & a {
+      color: #ff1d5e;
+      text-decoration: none;
+    }
+  }
+</style>

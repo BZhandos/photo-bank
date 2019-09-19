@@ -3,7 +3,7 @@
     <back-button v-if="$route.path !== '/'" />
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">Links to CV</router-link>
     </div>
     <router-view/>
   </div>

@@ -2,7 +2,7 @@
   <div class="result-wrap">
     <p>The result of searching <span>{{$route.params.query}}</span></p>
     <loading v-if="loading"/>
-    <div  v-if="$route.params.query"
+    <div  v-if="$route.params.query && result.length !== 0"
          class="photo-wrap">
       <div v-for="url in result"
            @click="$router.push({ path: '/image/'+ url.id})"
@@ -13,6 +13,8 @@
         </div>
       </div>
     </div>
+    <div v-if="$route.params.query && result.length >= 10"
+          class="pagination">Button show more and pagination is coming soon..</div>
     <div v-if="!loading && result.length == 0">
       <img src="https://unsplash.com/a/img/empty-states/photos.png">
     </div>
@@ -82,5 +84,8 @@ export default {
       }
     }
   }
+}
+.pagination {
+  text-align: center;
 }
 </style>
