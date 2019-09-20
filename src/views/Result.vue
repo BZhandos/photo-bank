@@ -13,9 +13,14 @@
         </div>
       </div>
     </div>
-    <div v-if="$route.params.query && result.length >= 10"
-          class="pagination">Button show more and pagination is coming soon..</div>
-    <div v-if="!loading && result.length == 0">
+
+    <div class="more-box"
+      v-if="additional.length !== 0"
+      @click="showMore()">
+      <p> Show me more <span>{{$route.params.query}}</span> </p>
+    </div>
+
+    <div v-if="!loading && result.length === 0">
       <img src="https://unsplash.com/a/img/empty-states/photos.png">
     </div>
   </div>
@@ -29,8 +34,10 @@ export default {
   name: 'Result',
   components: { Loading },
   data: () => ({
-    result: '',
-    loading: true
+    result: [],
+    loading: true,
+    additional: '',
+    page: 0
   }),
   mounted () {
     axios
@@ -40,8 +47,27 @@ export default {
       .then(response => {
         this.result = response.data.results
         this.loading = false
+        this.reserve()
       })
       .catch(error => console.log(error))
+  },
+  methods: {
+    reserve () {
+      this.page++
+      axios
+        .get('https://api.unsplash.com/search/photos/?client_id=442d6868b0058da84ce682f0d4dbf12958745f40c4e763ce22776a12115fefee&query=' +
+          this.$route.params.query + '&page=' + this.page
+        )
+        .then(response => {
+          this.additional = response.data.results
+        })
+        .catch(error => console.log(error))
+    },
+    showMore () {
+      this.result = this.result.concat(this.additional)
+      this.additional = ''
+      this.reserve()
+    }
   }
 }
 </script>
@@ -85,7 +111,19 @@ export default {
     }
   }
 }
-.pagination {
+.more-box {
+  border: 1px solid white;
+  max-width: 250px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0 auto;
+  padding: 5px;
   text-align: center;
+  transition: .2s;
+  &:hover {
+    background-color: #e3e058;
+    color: white;
+  }
 }
 </style>
