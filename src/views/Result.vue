@@ -37,7 +37,7 @@ export default {
     result: [],
     loading: true,
     additional: '',
-    page: 0
+    page: 1
   }),
   mounted () {
     axios
