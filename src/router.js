@@ -33,6 +33,10 @@ export default new Router({
     {
       path: '/result/:query',
       component: Result
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 })

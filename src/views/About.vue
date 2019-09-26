@@ -36,6 +36,9 @@ export default {
   h1 {
     text-align: left;
     padding-left: 10px;
+    @media (max-width: 850px) {
+      font-size: 16px;
+    }
     & span {
       color: #ff1d5e;
     }

@@ -5,7 +5,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">Links to CV</router-link>
     </div>
+    <!--    TODO transition-->
     <router-view/>
+    <!--    TODO transition-->
     <p>Lazyload is coming soon..</p>
   </div>
 </template>

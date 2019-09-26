@@ -20,7 +20,8 @@
       <p> Show me more <span>{{$route.params.query}}</span> </p>
     </div>
 
-    <div v-if="!loading && result.length === 0">
+    <div v-if="!loading && result.length === 0"
+        class="image-notfound">
       <img src="https://unsplash.com/a/img/empty-states/photos.png">
     </div>
   </div>
@@ -124,6 +125,11 @@ export default {
   &:hover {
     background-color: #e3e058;
     color: white;
+  }
+}
+.image-notfound {
+  & img {
+      width: 100%;
   }
 }
 </style>
