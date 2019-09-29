@@ -44,19 +44,31 @@ export default {
     additional: '',
     page: 1
   }),
+  watch: {
+    '$route' (to, form) {
+      this.$route.params.query = to.params.query
+      this.result = ''
+      this.loadImagesHandler()
+      console.log('watch happened')
+    }
+  },
   mounted () {
-    axios
-      .get('https://api.unsplash.com/search/photos/?client_id=442d6868b0058da84ce682f0d4dbf12958745f40c4e763ce22776a12115fefee&query=' +
-        this.$route.params.query
-      )
-      .then(response => {
-        this.result = response.data.results
-        this.loading = false
-        this.reserve()
-      })
-      .catch(error => console.log(error))
+    console.log('mounted happened')
+    this.loadImagesHandler()
   },
   methods: {
+    loadImagesHandler () {
+      axios
+        .get('https://api.unsplash.com/search/photos/?client_id=442d6868b0058da84ce682f0d4dbf12958745f40c4e763ce22776a12115fefee&query=' +
+          this.$route.params.query
+        )
+        .then(response => {
+          this.result = response.data.results
+          this.loading = false
+          this.reserve()
+        })
+        .catch(error => console.log(error))
+    },
     reserve () {
       this.page++
       axios
