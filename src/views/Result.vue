@@ -24,7 +24,10 @@
 
       <div v-if="!loading && result.length === 0"
            class="image-notfound">
-        <img src="https://unsplash.com/a/img/empty-states/photos.png">
+        <div class="image-notfound__text">
+          <i class="fa fa-sad-cry"></i>
+          Sorry, no images found by this query <span>(O_o)</span>
+        </div>
       </div>
     </div>
   </div>
@@ -48,12 +51,12 @@ export default {
     '$route' (to, form) {
       this.$route.params.query = to.params.query
       this.result = ''
+      this.additional = ''
       this.loadImagesHandler()
       console.log('watch happened')
     }
   },
   mounted () {
-    console.log('mounted happened')
     this.loadImagesHandler()
   },
   methods: {
@@ -144,8 +147,13 @@ export default {
   }
 }
 .image-notfound {
-  & img {
-      width: 100%;
+  &__text {
+    font-size: 24px;
+    color: #35258b;
+    & span {
+      color: #2c3e50;
+      font-size: 26px;
+    }
   }
 }
 </style>
