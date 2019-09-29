@@ -1,28 +1,31 @@
 <template>
-  <div class="result-wrap">
-    <p>The result of searching <span>{{$route.params.query}}</span></p>
-    <loading v-if="loading"/>
-    <div  v-if="$route.params.query && result.length !== 0"
-         class="photo-wrap">
-      <div v-for="url in result"
-           @click="$router.push({ path: '/image/'+ url.id})"
-           class="photo-wrap-column">
-        <div class="photo-wrap-column-box">
-          <img
-            :src= url.urls.small >
+  <div>
+    <search/>
+    <div class="result-wrap">
+      <p>The result of searching <span>{{$route.params.query}}</span></p>
+      <loading v-if="loading"/>
+      <div  v-if="$route.params.query && result.length !== 0"
+            class="photo-wrap">
+        <div v-for="url in result"
+             @click="$router.push({ path: '/image/'+ url.id})"
+             class="photo-wrap-column">
+          <div class="photo-wrap-column-box">
+            <img
+              :src= url.urls.small >
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="more-box"
-      v-if="additional.length !== 0"
-      @click="showMore()">
-      <p> Show me more <span>{{$route.params.query}}</span> </p>
-    </div>
+      <div class="more-box"
+           v-if="additional.length !== 0"
+           @click="showMore()">
+        <p> Show me more <span>{{$route.params.query}}</span> </p>
+      </div>
 
-    <div v-if="!loading && result.length === 0"
-        class="image-notfound">
-      <img src="https://unsplash.com/a/img/empty-states/photos.png">
+      <div v-if="!loading && result.length === 0"
+           class="image-notfound">
+        <img src="https://unsplash.com/a/img/empty-states/photos.png">
+      </div>
     </div>
   </div>
 </template>
@@ -30,10 +33,11 @@
 <script>
 import axios from 'axios'
 import Loading from '../components/UI/Loading'
+import Search from '../components/home/Search'
 
 export default {
   name: 'Result',
-  components: { Loading },
+  components: { Search, Loading },
   data: () => ({
     result: [],
     loading: true,
