@@ -32,8 +32,10 @@ export default {
       this.$router.push('/result/' + this.query)
     },
     checkEmptyHandler () {
-      if (this.query !== '') this.search()
-      else this.empty = true
+      if (this.query !== '') {
+        this.search()
+        this.empty = false
+      } else this.empty = true
     },
     someFun () {
       let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/Whoa.mp3')
