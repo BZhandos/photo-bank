@@ -3,9 +3,9 @@
     <back-button v-if="$route.path !== '/'" />
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link to="/planets">Planets</router-link> |
       <router-link to="/about">Links to CV</router-link>
     </div>
-    <TolerantHeader/>
     <!--    TODO transition-->
     <router-view/>
     <!--    TODO transition-->
@@ -14,11 +14,9 @@
 </template>
 <script>
 import BackButton from './components/UI/BackButton'
-import TolerantHeader from './components/UI/TolerantHeader'
 export default {
   components: {
-    BackButton,
-    TolerantHeader
+    BackButton
   }
 }
 </script>

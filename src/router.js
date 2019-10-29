@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import SingleImage from './views/SingleImage'
 import Result from './views/Result'
+import Planets from './views/Planets'
+
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +35,10 @@ export default new Router({
     {
       path: '/result/:query',
       component: Result
+    },
+    {
+      path: '/planets',
+      component: Planets
     },
     {
       path: '*',
