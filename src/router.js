@@ -43,6 +43,11 @@ export default new Router({
     {
       path: '*',
       redirect: '/'
+    },
+    {
+      path: '/art-board',
+      name: 'art-board',
+      component: () => import('./components/samples/AdCombo/ArtBoard.vue')
     }
   ]
 })
