@@ -24,6 +24,8 @@
     <h1><i class="fa fa-vk"></i>:
       <a target="_blank" href="https://vk.com/zhandosmuratovich"> zhandosmuratovich</a>
     </h1>
+    <h1>Samples:</h1>
+    <router-link to="/art-board">AdCombo</router-link>
   </div>
 </template>
 <script>
@@ -35,7 +37,6 @@ export default {
 <style scoped lang="scss">
   h1 {
     text-align: left;
-    padding-left: 10px;
     @media (max-width: 850px) {
       font-size: 16px;
     }
@@ -47,4 +48,10 @@ export default {
       text-decoration: none;
     }
   }
+.about {
+  padding-left: 10px;
+  text-align: left;
+  & p {
+  }
+}
 </style>
