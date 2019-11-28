@@ -26,7 +26,7 @@
       <div class="board-list">
         <div v-for="(comment, index) in list" :key="index"
               class="board-list-label">
-          <list :info="comment" />
+          <list :info="comment" :indexValue="index"/>
         </div>
       </div>
     </template>
@@ -51,8 +51,7 @@ export default {
         let info = {
           text: '',
           day: '',
-          month: '',
-          shown: false
+          month: ''
         }
         info.text = this.text
         info.day = this.getDay()
@@ -70,6 +69,9 @@ export default {
     getDay () {
       let d = new Date()
       return d.getDate()
+    },
+    deleteFromList (index) {
+      this.list.splice(index, 1)
     }
   }
 }
