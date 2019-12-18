@@ -25,7 +25,7 @@
       <a target="_blank" href="https://vk.com/zhandosmuratovich"> zhandosmuratovich</a>
     </h1>
     <h1>Samples:</h1>
-    <router-link to="/art-board">AdCombo</router-link>
+    <router-link to="/art-board">Array list manipulation</router-link>
   </div>
 </template>
 <script>

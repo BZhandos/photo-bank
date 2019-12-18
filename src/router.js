@@ -48,6 +48,11 @@ export default new Router({
       path: '/art-board',
       name: 'art-board',
       component: () => import('./components/samples/AdCombo/ArtBoard.vue')
+    },
+    {
+      path: '/vuex-vuelidate',
+      name: 'vuex-vuelidate',
+      component: () => import('./views/VuexVuelidate.vue')
     }
   ]
 })

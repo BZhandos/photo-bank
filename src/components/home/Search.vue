@@ -9,7 +9,7 @@
             <p>Searching field is empty. Enter something like
               <span @click="someFun()">WALL-E</span>
             </p>
-          </div>
+          </div>w
         </transition>
       </form>
       <div

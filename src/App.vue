@@ -3,7 +3,8 @@
     <back-button v-if="$route.path !== '/'" />
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/planets">Planets</router-link> |
+      <router-link to="/vuex-vuelidate">Vuex and Vulidate</router-link> |
+<!--      <router-link to="/planets">Planets</router-link> |-->
       <router-link to="/about">Links to CV</router-link>
     </div>
     <!--    TODO transition-->

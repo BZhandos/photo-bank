@@ -2,23 +2,23 @@
   <div class="board">
     <div class="board-header">
       <div class="board-header-info">
-        <p class="board-header-info__header">Подумать</p>
-        <p class="board-header-info__title">Продавец</p>
+        <p class="board-header-info__header">Title</p>
+        <p class="board-header-info__title">Sub-title</p>
       </div>
       <div class="board-header-button">
-        СМЕНИТЬ ЭТАП ПОДБОРА
+        Some array list manipulation
       </div>
     </div>
     <div class="divider"></div>
     <div  class="board-body">
       <input @focus="focus = true"
              v-model="text"
-             placeholder="Написать коментарий">
+             placeholder="Write something">
       <div v-if="focus" class="board-body-action">
         <div  :class="{active: text}"
               @click="addToList()"
-              class="board-body-action__save">СОХРАНИТЬ</div>
-        <div @click="focus = false, text = ''" class="board-body-action__cancel">ОТМЕНА</div>
+              class="board-body-action__save">SAVE</div>
+        <div @click="focus = false, text = ''" class="board-body-action__cancel">CANCEL</div>
       </div>
     </div>
     <template v-if="list.length > 0">
@@ -110,6 +110,8 @@ export default {
       font-size: 12px;
       border-radius: 4px;
       cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
     }
    }
   &-body {

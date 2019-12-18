@@ -15,17 +15,17 @@
            class="board-list-label__info-dropdown"
       :class="{alert: deleteAlert}">
         <template v-if="!deleteAlert">
-          <p @click="editHandler()">Редактировать</p>
+          <p @click="editHandler()">EDIT</p>
           <div class="divider"></div>
-          <p @click="deleteAlert = true">Удалить</p>
+          <p @click="deleteAlert = true">DELETE</p>
         </template>
         <template v-if="deleteAlert">
-          <div class="board-list-label__info-dropdown-delete">Удаление комментария</div>
+          <div class="board-list-label__info-dropdown-delete">DELETE COMMENT</div>
           <div class="divider"></div>
           <div class="action-delete">
             <div  @click="deleteHandler()"
-                  class="action-delete__save">УДАЛИТЬ</div>
-            <div @click="deleteAlert = false, show = false" class="action-delete__cancel">ОТМЕНА</div>
+                  class="action-delete__save">DELETE</div>
+            <div @click="deleteAlert = false, show = false" class="action-delete__cancel">CANCEL</div>
           </div>
         </template>
       </div>
@@ -33,8 +33,8 @@
     <div v-if="edit" class="action">
       <div  :class="{active: info.text !== temp}"
             @click="save()"
-            class="action__save">СОХРАНИТЬ</div>
-      <div @click="cancel()" class="action__cancel">ОТМЕНА</div>
+            class="action__save">SAVE</div>
+      <div @click="cancel()" class="action__cancel">CANCEL</div>
     </div>
   </div>
 </template>
