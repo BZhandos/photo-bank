@@ -2,9 +2,9 @@
   <div id="app">
     <back-button v-if="$route.path !== '/'" />
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/vuex-vuelidate">Vuex and Vulidate</router-link> |
-<!--      <router-link to="/planets">Planets</router-link> |-->
+      <router-link to="/">Home</router-link>
+      <router-link to="/vuex-vuelidate" v-if="!auth" >Vuex and Vulidate</router-link>
+      <router-link to="/tourism" v-if="auth" >Tourism</router-link>
       <router-link to="/about">Links to CV</router-link>
     </div>
     <!--    TODO transition-->
@@ -18,6 +18,11 @@ import BackButton from './components/UI/BackButton'
 export default {
   components: {
     BackButton
+  },
+  computed: {
+    auth () {
+      return this.$store.getters.isAuthenticated
+    }
   }
 }
 </script>
@@ -39,6 +44,7 @@ export default {
 #nav a {
   font-weight: bold;
   color: #2c3e50;
+  padding: 0 10px;
 }
 
 #nav a.router-link-exact-active {

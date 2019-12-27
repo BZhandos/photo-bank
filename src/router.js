@@ -53,6 +53,11 @@ export default new Router({
       path: '/vuex-vuelidate',
       name: 'vuex-vuelidate',
       component: () => import('./views/VuexVuelidate.vue')
+    },
+    {
+      path: '/tourism',
+      name: 'tourism',
+      component: () => import('./components/tourism/Tourism.vue')
     }
   ]
 })
