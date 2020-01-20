@@ -10,7 +10,6 @@
     <!--    TODO transition-->
     <router-view/>
     <!--    TODO transition-->
-    <p>Lazyload is coming soon..</p>
   </div>
 </template>
 <script>
