@@ -1,6 +1,5 @@
 <template>
   <div class="component-wrap">
-    still doing..
     <form v-on:submit.prevent="simulateLogin()" class="form">
       <my-input label-name="Your name"
                 @blur="$v.email.$touch()"

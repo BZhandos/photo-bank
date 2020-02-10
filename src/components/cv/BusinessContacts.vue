@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <h1><i class="fa fa-envelope"></i>:
-      <a target="_blank" href="mailto:bazargaliyev.zhandos@gmail.com">Just click me</a>
+      <a target="_blank" href="mailto:bazargaliyev.zhandos@gmail.com">Сlick to write</a>
     </h1>
     <h1><i class="fa fa-linkedin"></i>:
       <a target="_blank" href="https://www.linkedin.com/in/bazargaliyev-zhandos/"> LinkedIn </a>
