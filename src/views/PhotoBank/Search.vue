@@ -29,7 +29,7 @@ export default {
   }),
   methods: {
     search () {
-      this.$router.push('/result/' + this.query)
+      this.$router.push('/search/' + this.query)
     },
     checkEmptyHandler () {
       if (this.query !== '') {
@@ -40,7 +40,7 @@ export default {
     someFun () {
       let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/Whoa.mp3')
       audio.play()
-      this.$router.push('/result/WALL-E')
+      this.$router.push('/search/WALL-E')
     }
   }
 }

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Search from '../components/home/Search'
-import ListOfImages from '@/components/home/ListOfImages'
+import Search from './Search'
+import ListOfImages from './pages/home/ListOfImages'
 import TolerantHeader from '@/components/UI/TolerantHeader'
 
 export default {

@@ -24,9 +24,9 @@
 
 <script>
 import axios from 'axios'
-import Loading from '../components/UI/Loading'
-import Description from '../components/singleImage/Description'
-import ImageBox from '../components/singleImage/ImageBox'
+import Loading from '../../../../components/UI/Loading'
+import Description from './Description'
+import ImageBox from './ImageBox'
 export default {
   name: 'CurtainImage',
   components: {

@@ -35,8 +35,8 @@
 
 <script>
 import axios from 'axios'
-import Loading from '../components/UI/Loading'
-import Search from '../components/home/Search'
+import Loading from '../../components/UI/Loading'
+import Search from './Search'
 
 export default {
   name: 'Result',

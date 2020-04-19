@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import Loading from '../UI/Loading'
+import Loading from '../../../../components/UI/Loading'
 import axios from 'axios'
 export default {
   components: { Loading },

@@ -25,7 +25,7 @@
 
 <script>
 import { required, minLength, sameAs } from 'vuelidate/lib/validators'
-import Loading from '../components/UI/Loading'
+import Loading from '../../components/UI/Loading'
 
 export default {
   components: { Loading },

@@ -30,7 +30,7 @@ export default {
 <style scoped lang="scss">
 .wrapper {
   height: 80vh;
-  background: url('../../assets/nature.jpg') center center no-repeat;
+  background: url('../../../assets/nature.jpg') center center no-repeat;
   border-radius: 4px;
 }
 .block {

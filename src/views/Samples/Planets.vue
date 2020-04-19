@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Planet from '../components/planets/Planet'
-import PlanetPicture from '../components/planets/Picture'
+import Planet from './planets/Planet'
+import PlanetPicture from './planets/Picture'
 
 export default {
   name: 'Planets',

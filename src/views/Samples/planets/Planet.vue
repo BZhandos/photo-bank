@@ -23,7 +23,7 @@ export default {
   margin: auto;
   height: 600px;
   max-width: 350px;
-  background: url('../../assets/space.jpg') 0/cover;
+  background: url('../../../assets/space.jpg') 0/cover;
   box-shadow: 0 15px 30px 10px #070a0d;
   /*background-image: linear-gradient(180deg, #070a0d, #19232c);*/
   border-radius: 15px;

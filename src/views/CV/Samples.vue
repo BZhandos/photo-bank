@@ -25,6 +25,11 @@ export default {
         desc: 'Vuex and vulidate',
         link: '/vuex-vuelidate',
         src: require('../../assets/samples/vuexVulidate.jpg')
+      },
+      {
+        desc: 'DJ aka Vue_dev',
+        link: '/music',
+        src: require('../../assets/samples/vuexVulidate.jpg')
       }
     ]
   })
