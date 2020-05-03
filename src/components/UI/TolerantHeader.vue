@@ -4,6 +4,12 @@
       <transition name="slide-fade">
         <p v-show="show">{{call}}</p>
       </transition>
+  <div>
+    // todo hastag is empty - link is broken {{currentTextIndex}}
+  </div>
+      <div>
+        {{text}}|
+      </div>
     </div>
 </template>
 
@@ -20,10 +26,15 @@ export default {
     ],
     infinity: 0,
     call: ' ',
-    show: true
+    show: true,
+    text: '',
+    curText: '',
+    currentTextIndex: 0,
+    index: 0
   }),
   created () {
     this.showHandler()
+    this.runList()
   },
   methods: {
     toAbout () {
@@ -42,6 +53,31 @@ export default {
         this.show = false
       }, 2000)
       this.showHandler()
+    },
+    setTimeoutPrint () {
+      if (this.index < this.curText.length) {
+        this.text += this.curText.charAt(this.index)
+        this.index++
+        setTimeout(this.setTimeoutPrint, 300)
+      } else this.setTimeoutDelete()
+    },
+    setTimeoutDelete () {
+      if (this.index !== 0) {
+        this.curText = this.curText.slice(0, -1)
+        this.text = this.curText
+        this.index--
+        setTimeout(this.setTimeoutDelete, 50)
+      } else {
+        if (this.currentTextIndex < this.calls.length - 1) {
+          this.currentTextIndex++
+        } else this.currentTextIndex = 0
+        this.runList()
+      }
+    },
+    runList () {
+      this.curText = this.calls[this.currentTextIndex]
+      this.index = 0
+      this.setTimeoutPrint()
     }
   }
 }
@@ -49,7 +85,7 @@ export default {
 
 <style scoped lang="scss">
 .header-wrap {
-  height: 50px;
+  height: 150px;
   &-const {
     color: #ff1d5e;
     font-size: 16px;

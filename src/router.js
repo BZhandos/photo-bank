@@ -11,17 +11,17 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: '/images',
+      name: 'PhotoBank',
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/',
+      name: 'About',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/CV/About.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/CV/Index.vue')
     },
     {
       path: '/image/:id',

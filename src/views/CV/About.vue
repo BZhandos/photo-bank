@@ -1,6 +1,7 @@
 <template>
   <div class="about-wrap">
     <div class="about-wrap__info">
+
       <business-contacts />
       <my-photo />
       <fancy-contacts />
@@ -21,13 +22,25 @@ export default {
     MyPhoto,
     BusinessContacts,
     appSamples: Samples
+  },
+  data: () => ({
+    visible: true
+  }),
+  created () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll (event) {
+    }
   }
 }
 </script>
 <style scoped lang="scss">
 .about-wrap {
   &__info {
-    margin-top: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
