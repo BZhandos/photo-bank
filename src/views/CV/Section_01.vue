@@ -1,12 +1,12 @@
 <template>
-  <div class="s1-wrap">
-    <div class="intro-box">
+  <div class="section-box section-wrap" id="section1">
+    <div class="section-wrap-intro">
       <h1>Front-End Developer</h1>
       <p>{{text}}
-        <span class="intro-box-typed-cursor">|</span>
+        <span class="section-wrap-intro-typed-cursor">|</span>
       </p>
     </div>
-    <div>
+    <div  class="section-wrap-img">
       <img src="@/assets/temp3.png"/>
     </div>
   </div>
@@ -17,6 +17,7 @@ export default {
   name: 'Section_01',
   data: () => ({
     calls: [
+      'Hello World!',
       'Vue app',
       'Responsive site',
       'ES6 coder',
@@ -69,38 +70,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.s1-wrap {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap-reverse;
-  box-sizing: border-box;
-}
-.intro-box {
-  background-color: #2D2D32;
-  color: white;
-  padding: 60px 32px;
-  max-width: 500px;
-  width: 85%;
-  outline: 4px double #7dcfd8;
-  outline-offset: 8px;
-  animation: border-color 7s infinite;
-  margin: 30px 0;
-  & h1 {
-    color: rgba(255, 255, 255, 0.71);
-  }
-  &-typed-cursor {
-    animation: flash .7s infinite;
-  }
-}
-@keyframes flash {
-  0% { opacity: 0 }
-  100% { opacity: 1}
-}@keyframes border-color {
-  0% { outline-color: white }
-  33% { outline-color: #42b983 }
-  66% { outline-color: #42b983 }
-  100% { outline-color: white }
-}
-</style>
+

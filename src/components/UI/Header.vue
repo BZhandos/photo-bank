@@ -1,5 +1,5 @@
 <template>
-  <div class="header" id="header">
+  <div class="header" id="header1">
     <ul class="header-wrap">
       <router-link
         tag="li"
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import "@/assets/styles/components/header/header.scss";
 
 export default {
   name: 'Header',

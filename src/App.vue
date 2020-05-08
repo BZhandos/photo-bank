@@ -8,12 +8,10 @@
 </template>
 <script>
 import BackButton from './components/UI/BackButton'
-import HeaderBlock from './components/UI/Header'
 
 export default {
   components: {
-    BackButton,
-    HeaderBlock
+    BackButton
   },
   computed: {
     auth () {
@@ -27,17 +25,17 @@ export default {
   html,
   body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #2c3e50;
+    background-color: $backgroundBlack;
   }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background-color: $backgroundBlack;
-  height: 100%;
 }
-
   * {
     margin: 0;
     padding: 0;

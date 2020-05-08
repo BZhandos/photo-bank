@@ -1,30 +1,32 @@
 <template>
   <div class="cv-wrap">
-    <section_01 />
-    <HeaderBox />
-<!--    <AboutBlock />-->
     <HeaderBlock />
+    <section01 />
+    <section02 />
+    <section03 />
+    <footer-block />
   </div>
 </template>
 
 <script>
-import HeaderBlock from '../../components/UI/Header'
-import Section_01 from './Section_01'
-import HeaderBox from './Header'
-import AboutBlock from './About'
+import HeaderBlock from './Header'
+import Section01 from './Section_01'
+import Section02 from './Section_02'
+import Section03 from './Section_03'
+import FooterBlock from './Footer'
+
 export default {
   name: 'Index',
   components: {
-    Section_01,
     HeaderBlock,
-    HeaderBox,
-    AboutBlock
+    Section01,
+    Section02,
+    Section03,
+    FooterBlock
   }
 }
 </script>
 
-<style scoped>
-.cv-wrap {
-  height: 3500px;
-}
+<style lang="scss">
+@import "~@/assets/styles/pages/CV/cv-style";
 </style>
