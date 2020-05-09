@@ -6,26 +6,34 @@
     <div class="section-wrap-intro">
       <h1>Front-End Developer</h1>
       <p class="intro-box__desc">
-        {{expDays}} day
-        {{expMonths}} month
-        Innovative and creative web developer with in excess of 3 years extensive experience in frontline development and testing of web-based applications. My strong background includes front-end development using HTML5, CSS3, SAAS/SCSS, JavaScript and Bootstrap – in addition to knowledge of version control systems such as SVN and Git, and a thorough understanding of object-oriented programming and design patterns. In my previous roles, I have worked closely with internal Product & Marketing Teams, and external agencies when required, to deliver innovative features across all digital touchpoints, and produce concepts into fully-functional user-validated product, through the use of our CMS (HubSpot, in the most recent example).
+        Passioned web developer with in excess of {{expYears}} years (or {{expMonths}} months or   {{expDays}} days) extensive experience in frontline
+        development and testing of web-based applications.
+        My strong background includes front-end development using HTML5, CSS3, SAAS/SCSS, JavaScript, <b>Vue.js</b> and
+        Bootstrap – in addition to knowledge of version control systems such as Git, and a thorough understanding of object-oriented
+        programming and design patterns.
+        In my previous roles, I have worked closely with internal Product & Marketing Teams, and external
+        agencies when required, to deliver innovative features across all digital touchpoints, and produce concepts into fully-functional
+        user-validated product.
       </p>
     </div>
   </div>
 </template>
 
 <script>
-import { differenceInCalendarDays, differenceInMonths } from 'date-fns'
+import { differenceInCalendarDays, differenceInMonths, differenceInYears } from 'date-fns'
 
 export default {
   name: 'Section_02',
   data: () => ({
     expDays: 0,
-    expMonths: 0
+    expYears: 0,
+    expMonths: 0,
+    starterDay: new Date(2017, 7, 1, 0, 0)
   }),
   created () {
-    this.expDays = differenceInCalendarDays(new Date(), new Date(2017, 7, 1, 0, 0))
-    this.expMonths = differenceInMonths(new Date(), new Date(2017, 7, 1, 0, 0))
+    this.expDays = differenceInCalendarDays(new Date(), this.starterDay)
+    this.expMonths = differenceInMonths(new Date(), this.starterDay)
+    this.expYears = differenceInYears(new Date(), this.starterDay)
   },
   methods: {
   }

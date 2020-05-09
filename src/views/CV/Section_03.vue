@@ -1,15 +1,20 @@
 <template>
   <div class=" section-box s2-wrap" id="section3">
+<!--    <div>-->
+<!--      <img src="@/assets/temp3.png"/>-->
+<!--    </div>-->
+<!--    <div class="intro-box">-->
+<!--      <h1>Front-End Developer</h1>-->
+<!--      <p class="intro-box__desc">-->
+<!--        {{expDays}} day-->
+<!--        {{expMonths}} month-->
+<!--        Innovative and creative web developer with in excess of 3 years extensive experience in frontline development and testing of web-based applications. My strong background includes front-end development using HTML5, CSS3, SAAS/SCSS, JavaScript and Bootstrap – in addition to knowledge of version control systems such as SVN and Git, and a thorough understanding of object-oriented programming and design patterns. In my previous roles, I have worked closely with internal Product & Marketing Teams, and external agencies when required, to deliver innovative features across all digital touchpoints, and produce concepts into fully-functional user-validated product, through the use of our CMS (HubSpot, in the most recent example).-->
+<!--      </p>-->
+<!--    </div>-->
     <div>
-      <img src="@/assets/temp3.png"/>
-    </div>
-    <div class="intro-box">
-      <h1>Front-End Developer</h1>
-      <p class="intro-box__desc">
-        {{expDays}} day
-        {{expMonths}} month
-        Innovative and creative web developer with in excess of 3 years extensive experience in frontline development and testing of web-based applications. My strong background includes front-end development using HTML5, CSS3, SAAS/SCSS, JavaScript and Bootstrap – in addition to knowledge of version control systems such as SVN and Git, and a thorough understanding of object-oriented programming and design patterns. In my previous roles, I have worked closely with internal Product & Marketing Teams, and external agencies when required, to deliver innovative features across all digital touchpoints, and produce concepts into fully-functional user-validated product, through the use of our CMS (HubSpot, in the most recent example).
-      </p>
+      <h1>
+        Coming soon...
+      </h1>
     </div>
   </div>
 </template>

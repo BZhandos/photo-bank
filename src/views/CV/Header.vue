@@ -1,5 +1,8 @@
 <template>
   <div class="header" id="header" :class="{'sticky': sticky}">
+    <img class="header-icon"
+         v-scroll-to="{ el: '#' + routesList[0].routeName , offset: -20 }"
+         src="@/assets/x-dev.svg" />
     <ul class="header-wrap">
       <li class="header-wrap-item"
           v-for="(item, index) in routesList"
@@ -20,6 +23,7 @@ import viewport from '../../helpers/checkViewport'
 
 export default {
   name: 'Header',
+  mixins: [viewport],
   data: () => ({
     routesList: [
       {
@@ -62,7 +66,7 @@ export default {
 
       this.routesList.forEach((item, index) => {
         let temp = document.getElementById(item.routeName)
-        item.inViewPort = viewport.isInViewport(temp)
+        item.inViewPort = this.isInViewport(temp)
       })
     }
   }

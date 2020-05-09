@@ -2,12 +2,11 @@
   <div class="section-box section-wrap" id="section1">
     <div class="section-wrap-intro">
       <h1>Front-End Developer</h1>
-      <p>{{text}}
-        <span class="section-wrap-intro-typed-cursor">|</span>
+      <p>{{text}}<span class="section-wrap-intro-typed-cursor">|</span>
       </p>
     </div>
     <div  class="section-wrap-img">
-      <img src="@/assets/temp3.png"/>
+      <img src="https://sun9-48.userapi.com/c840324/v840324828/29098/P5RdRXDwI0Q.jpg"/>
     </div>
   </div>
 </template>
@@ -17,16 +16,12 @@ export default {
   name: 'Section_01',
   data: () => ({
     calls: [
-      'Hello World!',
-      'Vue app',
-      'Responsive site',
-      'ES6 coder',
-      'Front-end developer',
-      'Beautiful code'
+      'Hello World',
+      'My name is Zhandos',
+      'Freelance Front-End Developer',
+      'Vue.js lover  ❤'
     ],
-    infinity: 0,
     call: ' ',
-    show: true,
     text: '',
     curText: '',
     currentTextIndex: 0,
@@ -36,9 +31,6 @@ export default {
     this.runList()
   },
   methods: {
-    toAbout () {
-      this.$router.push('/about/')
-    },
     setTimeoutPrint () {
       if (this.index < this.curText.length) {
         this.text += this.curText.charAt(this.index)
@@ -69,5 +61,3 @@ export default {
   }
 }
 </script>
-
-

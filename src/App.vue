@@ -47,5 +47,7 @@ export default {
       outline: none;
     }
   }
-
+.no-overflow {
+  overflow: hidden;
+}
 </style>
