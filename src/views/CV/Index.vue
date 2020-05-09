@@ -4,6 +4,7 @@
     <MobileHeader v-else />
     <section01 />
     <section02 />
+    <section04/>
     <section03 />
     <footer-block />
   </div>
@@ -15,6 +16,7 @@ import MobileHeader from './mobileHeader'
 import Section01 from './Section_01'
 import Section02 from './Section_02'
 import Section03 from './Section_03'
+import Section04 from './Section_04'
 import FooterBlock from './Footer'
 
 import checkViewport from '../../helpers/checkViewport'
@@ -28,6 +30,7 @@ export default {
     Section01,
     Section02,
     Section03,
+    Section04,
     FooterBlock
   }
 }

@@ -1,8 +1,5 @@
 <template>
   <div class="header" id="header" :class="{'sticky': sticky}">
-    <img class="header-icon"
-         v-scroll-to="{ el: '#' + routesList[0].routeName , offset: -20 }"
-         src="@/assets/x-dev.svg" />
     <ul class="header-wrap">
       <li class="header-wrap-item"
           v-for="(item, index) in routesList"
@@ -15,6 +12,9 @@
         </div>
       </li>
     </ul>
+    <img class="header-icon"
+         v-scroll-to="{ el: '#' + routesList[0].routeName , offset: -20 }"
+         src="@/assets/x-dev.svg" />
   </div>
 </template>
 
@@ -39,6 +39,12 @@ export default {
         inViewPort: false
       },
       {
+        name: 'Skills',
+        routeName: 'section4',
+        subtitle: 'Dev & Lang',
+        inViewPort: false
+      },
+      {
         name: 'Planets',
         routeName: 'section3',
         subtitle: 'Welcome Planets!',
@@ -46,7 +52,7 @@ export default {
       }
     ],
     hovered: false,
-    sticky: false,
+    sticky: false
   }),
   watch: {
     $route: function (newVal, oldVal) {

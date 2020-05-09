@@ -38,6 +38,12 @@ export default {
         inViewPort: false
       },
       {
+        name: 'Skills',
+        routeName: 'section4',
+        subtitle: 'Dev & Lang',
+        inViewPort: false
+      },
+      {
         name: 'Planets',
         routeName: 'section3',
         subtitle: 'Welcome Planets!',

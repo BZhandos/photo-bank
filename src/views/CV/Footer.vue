@@ -33,14 +33,14 @@ export default {
   justify-content: space-around;
   & i {
     color: #42b983;
-    transition: .3s;
+    transition: .5s;
   }
   & div {
     width: 100%;
     cursor: pointer;
     &:hover {
       i {
-        color: red;
+        color: #FAC921;
       }
     }
   }
