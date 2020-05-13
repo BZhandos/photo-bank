@@ -39,6 +39,12 @@ export default {
         inViewPort: false
       },
       {
+        name: 'MY CLIENTS',
+        routeName: 'section3',
+        subtitle: 'Testimonial',
+        inViewPort: false
+      },
+      {
         name: 'Skills',
         routeName: 'section4',
         subtitle: 'Dev & Lang',
@@ -46,7 +52,7 @@ export default {
       },
       {
         name: 'Planets',
-        routeName: 'section3',
+        routeName: 'section5',
         subtitle: 'Welcome Planets!',
         inViewPort: false
       }

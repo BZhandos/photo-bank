@@ -1,15 +1,13 @@
 <template>
   <div class="section-box s4-wrap" id="section4">
     <div class="s4-wrap-dev">
-      <div class="s4-wrap-separator">
-        <p class="title">Developer Skills</p>
-        <p class="subtitle">
-          Great understanding of Sketch App, Adobe Experience Design and Adobe Photoshop.
+      <default-description
+        title="Developer Skills"
+        subtitle="Great understanding of Sketch App, Adobe Experience Design and Adobe Photoshop.
           Expert of making Responsive Site and using Bootstrap.
           Understanding of mobile apps. Solid experience to work in a team. Understanding
-          of VueJS, Vuex, AWS (Amplify, Route 53), CI/CD.
-        </p>
-      </div>
+          of VueJS, Vuex, AWS (Amplify, Route 53), CI/CD."
+      />
       <div class="s4-wrap-dev-skillbar" v-for="(skill, index) in devSkills" :key="index">
         <div class="skillbar-info">
           <p class="subtitle">{{ skill.name }}</p>
@@ -21,11 +19,11 @@
       </div>
     </div>
     <div class="s4-wrap-lang">
-      <div class="s4-wrap-separator">
-        <p class="title">Language Skills</p>
-        <p class="subtitle">Passed IELTS in school years (2013) 5.5 points, since I am still working on it.</p>
-        <p class="subtitle">Russian and Kazakh languages is native.</p>
-      </div>
+      <default-description
+        title="Language Skills"
+        subtitle="Passed IELTS in school years (2013) 5.5 points, since I am still working on it.
+        Russian and Kazakh languages is native."
+      />
       <div class="s4-wrap-lang-wrap">
         <div  class="s4-wrap-lang-wrap-box" v-for="(skill, index) in langSkills" :key="index">
           <div class="s4-wrap-lang-wrap-box-cirlce">

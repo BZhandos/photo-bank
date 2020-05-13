@@ -127,9 +127,10 @@
 @keyframes flash {
   0% { opacity: 0 }
   100% { opacity: 1}
-}@keyframes border-color {
+}
+@keyframes border-color {
    0% { outline-color: white }
    33% { outline-color: #42b983 }
    66% { outline-color: #42b983 }
    100% { outline-color: white }
- }
+}
