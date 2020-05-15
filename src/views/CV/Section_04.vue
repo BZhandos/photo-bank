@@ -145,9 +145,11 @@ export default {
     &-wrap {
       display: flex;
       justify-content: space-around;
+      flex-wrap: wrap;
       margin-top: 20px;
       &-box {
         position: relative;
+        margin-bottom: 10px;
         &-cirlce {
           position: absolute;
           left: 0;

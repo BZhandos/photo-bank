@@ -6,7 +6,7 @@
   padding: 0 15px;
   @media (max-width: 1024px) {
     margin: 20px 0;
-   min-height: auto;
+    min-height: auto;
   }
 }
 .section-wrap {
@@ -16,6 +16,9 @@
   flex-wrap: wrap-reverse;
   box-sizing: border-box;
   padding-bottom: 60px;
+  @media (max-width: 600px) {
+    padding: 10px;
+  }
   &-intro {
     background-color: #2D2D32;
     color: white;

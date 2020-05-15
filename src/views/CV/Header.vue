@@ -51,9 +51,9 @@ export default {
         inViewPort: false
       },
       {
-        name: 'Planets',
+        name: 'My works',
         routeName: 'section5',
-        subtitle: 'Welcome Planets!',
+        subtitle: 'Welcome here!',
         inViewPort: false
       }
     ],

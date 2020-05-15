@@ -2,7 +2,7 @@
   <div class="section-box s3-wrap" id="section3">
     <default-description
       title="MY CLIENTS AND TESTIMONIALS"
-      subtitle="In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida."
+      subtitle="The reviews of my happy customers are collected from everywhere for this amazing swiper, please check this out!"
     />
     <swiper class="swiper"
             @slideChange="slideChanges"
@@ -11,12 +11,13 @@
             ref="my-swiper">
       <swiper-slide v-for="(item, index) in slides" :key="index">
           <div class="reviewer">
-            <img src="https://sun9-48.userapi.com/c840324/v840324828/29098/P5RdRXDwI0Q.jpg"/>
+            <img :src="require('@/assets/images/reviews/' + item.img)" alt="soon.."/>
           </div>
           <div class="slide__content">
             <p class="slide__content-title">{{ item.from }}</p>
-            <p class="slide__content-subtitle">{{ item.from }}</p>
+            <p class="slide__content-subtitle">Happy {{ item.status }}</p>
             <p class="slide__content-content">{{ item.content }}</p>
+            <p class="slide__content-via">via {{ item.via }}</p>
           </div>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -31,12 +32,31 @@ export default {
   components: { DefaultDescription },
   data: () => ({
     slides: [
-      { id: 1, from: 'Magora systems', content: 'It was a big pleasure working with Zhandos! Very communicative and active developer. Looking forward to working with him on new projects!' },
-      { id: 2, from: 'ME2', content: ' "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."' },
-      { id: 3, from: 'ME3', content: ' "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."' },
-      { id: 4, from: 'ME4', content: ' "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."' },
-      { id: 5, from: 'ME5', content: ' "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."' },
-      { id: 6, from: 'ME6', content: ' "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."' }
+
+      {
+        id: 2,
+        from: 'Mussina Renata',
+        via: 'linkedin',
+        img: 'magora.png',
+        status: 'client from Technodom',
+        content: 'Ur text is going to be there, thanks'
+      },
+      {
+        id: 1,
+        from: 'Magora systems',
+        via: 'upwork',
+        img: 'magora.png',
+        status: 'client',
+        content: 'It was a big pleasure working with Zhandos! Very communicative and active developer. Looking forward to working with him on new projects!'
+      },
+      {
+        id: 2,
+        from: 'Jerry Case',
+        via: 'upwork',
+        img: 'upwork.png',
+        status: 'client',
+        content: 'Good work, quick revisions, clean code. Skills 5.0 Quality 5.0 Availability 5.0 Deadlines 5.0 Communication 5.0 Cooperation 5.0'
+      }
     ],
     swiperOption: {
       slidesPerView: "auto",
@@ -65,10 +85,14 @@ export default {
 .s3-wrap {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
+.swiper {
+  width: 100%;
+}
 .swiper-slide {
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
   padding: 80px 0 28px;
   .reviewer {
@@ -88,8 +112,8 @@ export default {
   }
   .slide__content {
     position: relative;
-    min-height: 300px;
-    padding: 30px 65px;
+    height: 250px;
+    padding: 40px 65px;
     background: #f9f9f9;
     border: 1px solid #a8a8a8;
     border-radius: 4px;
@@ -101,17 +125,28 @@ export default {
     text-align: left;
     line-height: 1.5;
     &-title {
-      color: red;
+      color: #666;
+      font-weight: bold;
       font-size: 14px;
     }
     &-subtitle {
-      color: gray;
+      color: #999;
+      font-weight: bold;
       font-size: 12px;
       margin-bottom: 10px;
     }
     &-content {
       color: gray;
       font-size: 10px;
+    }
+    &-via {
+      color: #666;
+      position: absolute;
+      bottom: 10px;
+      font-weight: bold;
+      font-size: 8px;
+      text-transform: uppercase;
+      text-decoration: underline dotted;
     }
   }
 }
@@ -126,8 +161,14 @@ export default {
     animation: fade-in 2s;
   }
 }
+.swiper-pagination {
+  bottom: 0 !important;
+}
 .swiper-pagination-bullet {
   background: #FAC921;
+}
+.swiper-pagination-bullet-active {
+
 }
 @keyframes fade-in {
   from {
