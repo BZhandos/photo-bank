@@ -38,15 +38,21 @@ export default {
         inViewPort: false
       },
       {
+        name: 'My clients',
+        routeName: 'section3',
+        subtitle: 'Testimonial',
+        inViewPort: false
+      },
+      {
         name: 'Skills',
         routeName: 'section4',
         subtitle: 'Dev & Lang',
         inViewPort: false
       },
       {
-        name: 'Planets',
-        routeName: 'section3',
-        subtitle: 'Welcome Planets!',
+        name: 'My works',
+        routeName: 'section5',
+        subtitle: 'Welcome here!',
         inViewPort: false
       }
     ],

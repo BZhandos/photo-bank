@@ -39,7 +39,7 @@ export default {
         inViewPort: false
       },
       {
-        name: 'MY CLIENTS',
+        name: 'My clients',
         routeName: 'section3',
         subtitle: 'Testimonial',
         inViewPort: false
