@@ -19,17 +19,17 @@ export default {
       {
         desc: 'Some array manipulation',
         link: '/art-board',
-        src: require('../../assets/samples/arrayManipulate.jpg')
+        src: require('../../assets/images/samples/arrayManipulate.jpg')
       },
       {
         desc: 'Vuex and vulidate',
         link: '/vuex-vuelidate',
-        src: require('../../assets/samples/vuexVulidate.jpg')
+        src: require('../../assets/images/samples/vuexVulidate.jpg')
       },
       {
         desc: 'DJ aka Vue_dev',
         link: '/music',
-        src: require('../../assets/samples/vuexVulidate.jpg')
+        src: require('../../assets/images/samples/vuexVulidate.jpg')
       }
     ]
   })

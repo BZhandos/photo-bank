@@ -1,21 +1,20 @@
 <template>
   <div class="footer-wrap">
-    <div>
       <a target="_blank" href="https://www.linkedin.com/in/bazargaliyev-zhandos/">
         <i class="fa fa-linkedin"></i>
       </a>
-    </div>
-    <div>
       <a target="_blank" href="mailto:bazargaliyev.zhandos@gmail.com">
         <i class="fa fa-envelope"></i>
       </a>
-    </div>
-    <div>
       <a target="_blank" href="https://www.instagram.com/bazargaliyev.zhandos/">
         <i class="fa fa-instagram"></i>
       </a>
-    </div>
-
+      <a target="_blank" href="https://t.me/zhandos_vue">
+        <i class="fa fa-telegram"></i>
+      </a>
+      <a target="_blank" href="https://github.com/BZhandos">
+        <i class="fa fa-github-square"></i>
+      </a>
   </div>
 </template>
 
@@ -35,7 +34,7 @@ export default {
     color: #42b983;
     transition: .5s;
   }
-  & div {
+  & a {
     width: 100%;
     cursor: pointer;
     &:hover {

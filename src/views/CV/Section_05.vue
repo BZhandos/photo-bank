@@ -1,27 +1,54 @@
 <template>
   <div class="section-box s5-wrap" id="section5">
-    <h1 @click="goto">
-      Coming soon...
-    </h1>
+    <div class="own-wrap">
+       <p class="title">My projects</p>
+      <div class="list-wrap">
+        <projects-list
+          :projects= ownProjects
+        />
+      </div>
+    </div>
+    <div class="inc-wrap">
+      <p class="title">Enterprise</p>
+      <projects-list
+        :projects= incProjects
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   name: 'Section_05',
+  data: () => ({
+    ownProjects: [
+      {
+        title: 'Photo bank',
+        subtitle: 'A lot of images with search function',
+        url: 'images',
+        img: 'photo-bank.jpg'
+      },
+      {
+        title: 'Vuex',
+        subtitle: 'and Vulidate'
+      },
+      {
+        title: 'Music',
+        subtitle: 'Lets be Dj'
+      }
+    ],
+    incProjects: [
+      {
+        title: 'technodom.kz',
+        subtitle: 'Only main page'
+      },
+      {
+        title: 'platiza.ru',
+        subtitle: 'admin side and calulator'
+      }
+    ]
+  }),
   methods: {
-    goto () {
-      //this.$router.push('/images')
-      axios
-        .post('https://www.kompra.kz/open-company/_search?keyword=apple%20city&size=20'
-        )
-        .then(response => {
-          console.log(response)
-        })
-        .catch(error => console.log(error))
-    }
   }
   // API.sendPhoto(imageNotDone).then((response) => {
   //   if (response && response.success) {
@@ -31,13 +58,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .s5-wrap
   {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    flex-direction: column;
-  }
+    flex-wrap: wrap;
+}
+.title {
+  text-align: center;
+}
 
 </style>

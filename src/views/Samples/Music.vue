@@ -20,12 +20,12 @@ export default {
     singers: [
       {
         name: 1,
-        music: new Audio(require('../../assets/samples/bass.mp3')),
+        music: new Audio(require('../../assets/images/samples/bass.mp3')),
         isPlaying: false
       },
       {
         name: 2,
-        music: new Audio(require('../../assets/samples/bong.mp3')),
+        music: new Audio(require('../../assets/images/samples/bong.mp3')),
         isPlaying: false
       }
     ]

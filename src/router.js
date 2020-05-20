@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from './views/PhotoBank/Home.vue'
 import SingleImage from './views/PhotoBank/pages/imageInfo/SingleImage'
 import Search from './views/PhotoBank/Result'
-import Planets from './views/Samples/Planets'
 
 Vue.use(Router)
 
@@ -30,10 +29,6 @@ export default new Router({
     {
       path: '/search/:query',
       component: Search
-    },
-    {
-      path: '/planets',
-      component: Planets
     },
     {
       path: '*',

@@ -1,8 +1,8 @@
 <template>
   <div>
+    <p class="search-title">Results by <span>{{$route.params.query}}</span></p>
     <search/>
     <div class="result-wrap">
-      <p>The result of searching <span>{{$route.params.query}}</span></p>
       <loading v-if="loading"/>
       <div  v-if="$route.params.query && result.length !== 0"
             class="photo-wrap">
@@ -93,14 +93,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.result-wrap {
-  & p {
-    font-size: 18px;
-    & span {
-      font-size: 24px;
-      color: #ff1d5e;
-      text-transform: uppercase;
-    }
+.search-title {
+  font-size: 18px;
+  padding: 40px 0 20px 0;
+  & span {
+    font-size: 24px;
+    color: #ff1d5e;
+    text-transform: uppercase;
   }
 }
 .photo-wrap {

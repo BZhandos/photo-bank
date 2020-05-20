@@ -5,7 +5,7 @@
           v-for="(item, index) in routesList"
           :class="{'active-viewport': item.inViewPort}"
           :key="index"
-          v-scroll-to="{ el: '#' + item.routeName , offset: -20 }">
+          v-scroll-to="{ el: '#' + item.routeName , offset: -70 }">
         <div class="header-wrap-item-box">
           {{ item.name }}
           <p>{{ item.subtitle }}</p>
@@ -29,7 +29,7 @@ export default {
       {
         name: 'Home',
         routeName: 'section1',
-        subtitle: 'Welcome home!',
+        subtitle: 'Welcome!',
         inViewPort: true
       },
       {

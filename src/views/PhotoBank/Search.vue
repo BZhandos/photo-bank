@@ -9,7 +9,7 @@
             <p>Searching field is empty. Enter something like
               <span @click="someFun()">WALL-E</span>
             </p>
-          </div>w
+          </div>
         </transition>
       </form>
       <div
@@ -58,6 +58,7 @@ export default {
     margin: 10px;
   }
   &__error {
+    margin-bottom: 20px;
     & span {
       color: yellow;
       font-weight: bold;
