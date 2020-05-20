@@ -19,32 +19,8 @@
   @media (max-width: 600px) {
     padding: 10px;
   }
-  &-intro {
-    background-color: #2D2D32;
-    color: white;
-    padding: 60px 32px;
-    max-width: 500px;
-    width: 85%;
-    outline: 4px double #7dcfd8;
-    outline-offset: 8px;
-    animation: border-color 7s infinite;
-    margin: 18px 8px;
-    & h1 {
-      color: rgba(255, 255, 255, 0.71);
-    }
-    &-typed-cursor {
-      padding-left: 3px;
-      color: #0b0c16;
-      animation: flash .6s infinite;
-    }
-  }
-  &-img {
-    & img {
-      max-width: 700px;
-      width: 95%;
-    }
-  }
 }
+
 .header {
   padding-bottom: 10px;
   width: 100%;
@@ -127,13 +103,4 @@
   margin-left: 0;
 }
 
-@keyframes flash {
-  0% { opacity: 0 }
-  100% { opacity: 1}
-}
-@keyframes border-color {
-   0% { outline-color: white }
-   33% { outline-color: #42b983 }
-   66% { outline-color: #42b983 }
-   100% { outline-color: white }
-}
+

@@ -26,7 +26,7 @@ export default {
   name: 'projectsList',
   props: {
     projects: {
-      type: Object
+      type: Array
     }
   }
 }

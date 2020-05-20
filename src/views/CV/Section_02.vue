@@ -1,9 +1,6 @@
 <template>
-  <div class="section-box section-wrap" id="section2">
-    <div class="section-wrap-img">
-      <img src="https://sun9-48.userapi.com/c840324/v840324828/29098/P5RdRXDwI0Q.jpg"/>
-    </div>
-    <div class="section-wrap-intro">
+  <div class="section-box s2-wrap" id="section2">
+    <div class="s2-wrap-intro">
       <h1>Front-End Developer</h1>
       <p class="intro-box__desc">
         Passioned web developer with in excess of {{expYears}} years (or {{expMonths}} months or   {{expDays}} days) extensive experience in frontline
@@ -15,6 +12,9 @@
         agencies when required, to deliver innovative features across all digital touchpoints, and produce concepts into fully-functional
         user-validated product.
       </p>
+    </div>
+    <div class="s2-wrap-img">
+      <img src="https://sun9-48.userapi.com/c840324/v840324828/29098/P5RdRXDwI0Q.jpg"/>
     </div>
   </div>
 </template>
@@ -45,9 +45,16 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap-reverse;
-  box-sizing: border-box;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  &-intro {
+    max-width: 350px;
+  }
+  &-img {
+    max-width: 600px;
+    & img {
+      width: 95%;
+    }
+  }
 }
 .intro-box {
   color: white;
