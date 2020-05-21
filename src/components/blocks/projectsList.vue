@@ -40,6 +40,7 @@ export default {
   max-width: 600px;
   margin: 50px auto;
   &-column {
+    cursor: pointer;
     position: relative;
     border-radius: 5px;
     border: 2px solid rgba(255, 255, 255, 0.2);;

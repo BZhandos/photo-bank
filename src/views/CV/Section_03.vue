@@ -32,15 +32,6 @@ export default {
   components: { DefaultDescription },
   data: () => ({
     slides: [
-
-      {
-        id: 2,
-        from: 'Mussina Renata',
-        via: 'linkedin',
-        img: 'magora.png',
-        status: 'client from Technodom',
-        content: 'Ur text is going to be there, thanks'
-      },
       {
         id: 1,
         from: 'Magora systems',
@@ -56,6 +47,14 @@ export default {
         img: 'upwork.png',
         status: 'client',
         content: 'Good work, quick revisions, clean code. Skills 5.0 Quality 5.0 Availability 5.0 Deadlines 5.0 Communication 5.0 Cooperation 5.0'
+      },
+      {
+        id: 3,
+        from: 'Idrissova Zhazira',
+        via: 'linkedin',
+        img: 'zhazira_i.jpeg',
+        status: 'client from atsmartstudy.com',
+        content: 'A very talented specialist in his field. Zhandos understands the problem well and offers his own solutions. Quality of work 10 out of 10. Thank you and  looking forward to working with you again!'
       }
     ],
     swiperOption: {
