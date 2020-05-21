@@ -19,7 +19,7 @@
         </p>
       </div>
       <div class="s1-wrap-slider-img">
-        <img src="https://sun9-48.userapi.com/c840324/v840324828/29098/P5RdRXDwI0Q.jpg"/>
+        <img src="@/assets/images/me.png"/>
       </div>
     </div>
   </div>
