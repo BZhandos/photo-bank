@@ -19,6 +19,7 @@
     "vue": "^2.6.10",
     "vue-awesome-swiper": "^4.1.1",
     "vue-date-fns": "^1.1.0",
+    "vue-gtag": "^1.6.2",
     "vue-router": "^3.0.3",
     "vue-scrollto": "^2.18.1",
     "vuelidate": "^0.7.4",

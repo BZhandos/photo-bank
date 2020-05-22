@@ -57,11 +57,11 @@ export default {
     this.runList()
     // Average amount of daily programming hours is 4.5(day offs not considered)
     this.hours = differenceInCalendarDays(new Date(), new Date(2017, 7, 1, 0, 0)) / 7 * 5 * 4.5
+    this.$gtag.pageview({
+      page_path: '/home'
+    })
   },
   computed: {
-    wayToNinja () {
-      return this.tweenedNumber.toFixed(0)
-    }
   },
   methods: {
     formatToHours (value) {
