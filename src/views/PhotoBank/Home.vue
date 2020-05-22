@@ -15,6 +15,11 @@ export default {
   components: {
     ListOfImages,
     Search
+  },
+  created () {
+    this.$gtag.pageview({
+      page_path: '/photo-bank'
+    })
   }
 }
 </script>
