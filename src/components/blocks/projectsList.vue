@@ -2,7 +2,7 @@
   <div class="photo-wrap">
     <div class="photo-wrap-column"
          v-for="project in projects"
-         @click="$router.push({ path: project.url})"
+         @click="$router.push({ name: project.name })"
     >
       <div class="text-box">
         <div class="text-box-wrap">
@@ -36,7 +36,6 @@ export default {
 .photo-wrap {
   column-width: 250px;
   column-gap: 15px;
-  width: 90%;
   max-width: 600px;
   margin: 50px auto;
   &-column {

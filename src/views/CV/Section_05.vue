@@ -25,8 +25,13 @@ export default {
       {
         title: 'Photo bank',
         subtitle: 'A lot of images with search function',
-        url: 'images',
+        name: 'PhotoBank',
         img: 'photo-bank.jpg'
+      },
+      {
+        title: 'Speed Reading',
+        subtitle: 'Fast and Furious',
+        name: 'SpeedReading'
       },
       {
         title: 'Vuex',
@@ -38,6 +43,11 @@ export default {
       }
     ],
     incProjects: [
+      {
+        title: 'atf24.kz',
+        subtitle: 'Online banking',
+        img: 'atf.jpg'
+      },
       {
         title: 'technodom.kz',
         subtitle: 'Only main page'

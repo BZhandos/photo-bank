@@ -39,7 +39,7 @@ export default {
     calls: [
       'Hello World',
       'My name is Zhandos',
-      'Freelance Front-End Developer',
+      'Freelance Developer',
       'Vue.js lover  ❤'
     ],
     call: ' ',
