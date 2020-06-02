@@ -31,7 +31,8 @@ export default {
       {
         title: 'Speed Reading',
         subtitle: 'Fast and Furious',
-        name: 'SpeedReading'
+        name: 'SpeedReading',
+        img: 'reading.png'
       },
       {
         title: 'Vuex',
