@@ -28,10 +28,10 @@ export default {
   .arrow-wrapper {
     position: absolute;
     z-index: 1;
-    top: 30px;
+    top: 5px;
     padding-left: 10px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 18px;
   }
   .slidingOut-leave-active {
     animation: slidingOut 0.5s ease-out forwards;
