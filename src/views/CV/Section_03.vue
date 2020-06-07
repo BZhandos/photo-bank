@@ -2,7 +2,7 @@
   <div class="section-box s3-wrap" id="section3">
     <default-description
       title="MY CLIENTS AND TESTIMONIALS"
-      subtitle="The reviews of my happy customers are collected from everywhere for this amazing swiper, please check this out!"
+      subtitle="The reviews of my happy customers are collected from everywhere(upwork.com, linkedin.com) in this amazing swiper, please check this out!"
     />
     <swiper class="swiper"
             @slideChange="slideChanges"

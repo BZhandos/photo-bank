@@ -111,9 +111,6 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  & ul {
-    margin-block: 0;
-  }
 }
 .turn-down {
   position: relative;
