@@ -141,6 +141,9 @@ export default {
       & h1 {
         color: rgba(255, 255, 255, 0.71);
       }
+      & p {
+        height: 30px;
+      }
       &-typed-cursor {
         padding-left: 3px;
         color: #0b0c16;
