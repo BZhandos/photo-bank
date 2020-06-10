@@ -100,6 +100,7 @@ export default {
 
 <style scoped lang="scss">
 .s1-wrap {
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
   display: flex;
   flex-direction: column;
   &-hours {
