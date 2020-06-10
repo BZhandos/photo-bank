@@ -1,7 +1,7 @@
 <template>
   <div class="photo-wrap">
     <div class="photo-wrap-column"
-         v-for="project in projects"
+         v-for="(project, key) in projects" :key="key"
          @click="$router.push({ name: project.name })"
     >
       <div class="text-box">
@@ -10,12 +10,14 @@
           <p>{{ project.subtitle }}</p>
         </div>
       </div>
-      <div class="photo-wrap-column-box">
-        <img v-if="project.img"
+      <div class="photo-wrap-column-box"  v-if="project.img">
+        <img
              :src="require('@/assets/images/samples/' + project.img)"
         />
-        <img v-else
-          :src="require('@/assets/images/samples/coming-soon.jpg')" >
+      </div>
+      <div class="photo-wrap-column-box-coming" v-else>
+        <img
+             :src="require('@/assets/images/samples/coming-soon.jpg')" >
       </div>
     </div >
   </div>
@@ -50,11 +52,19 @@ export default {
     &-box {
        transition: .3s;
     & img {
-       opacity: .2;
         width: 100%;
         height: auto;
         margin-bottom: 5px;
         transition: .3s;
+      }
+      &-coming {
+        & img {
+          opacity: .2;
+          width: 100%;
+          height: auto;
+          margin-bottom: 5px;
+          transition: .3s;
+        }
       }
     }
     &:hover {
