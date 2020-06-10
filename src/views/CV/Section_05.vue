@@ -76,6 +76,7 @@ export default {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    margin: 0 5px;
 }
 .title {
   text-align: center;

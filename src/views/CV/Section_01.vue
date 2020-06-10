@@ -102,8 +102,8 @@ export default {
 .s1-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   &-hours {
+    padding-top: 20px;
     margin-bottom: 5%;
     &-quote {
       font-size: 16px;
@@ -125,17 +125,19 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+    }
     &-intro {
       background-color: #2D2D32;
       color: white;
       padding: 60px 32px;
-      max-width: 500px;
+      max-width: 430px;
       width: 85%;
       outline: 4px double #7dcfd8;
       outline-offset: 8px;
       animation: border-color 7s infinite;
-      margin: 18px 8px;
+      margin: 18px 20px;
       & h1 {
         color: rgba(255, 255, 255, 0.71);
       }

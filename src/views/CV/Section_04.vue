@@ -128,6 +128,7 @@ export default {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0 10px;
   &-separator {
     border-left: 2px solid  #FAC921;
     padding-left: 10px;

@@ -46,6 +46,7 @@ export default {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0 10px;
   &-intro {
     max-width: 350px;
   }
@@ -71,6 +72,7 @@ export default {
     letter-spacing: 0.5px;
     font-weight: 300;
     text-align: justify;
+    margin-bottom: 30px;
   }
 }
 </style>
