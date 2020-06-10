@@ -26,6 +26,7 @@ export default {
 <style scoped>
 .desc-wrap {
   border-left: 2px solid  #FAC921;
-  padding-left: 10px;
+  padding: 10px;
+  margin-bottom: 25px;
 }
 </style>

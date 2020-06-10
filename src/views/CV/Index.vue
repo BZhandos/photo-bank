@@ -31,6 +31,9 @@
           <p class="title c">
             Feel free to contact me!
           </p>
+          <div class="welcomer-rick">
+            <img src="@/assets/images/ram.png"/>
+          </div>
         </div>
       </div>
     </div>
@@ -91,6 +94,7 @@ export default {
 
 .welcomer {
   position: fixed;
+  color: black;
   width: 100%;
   height: 100%;
   top: 0;
@@ -126,6 +130,18 @@ export default {
           fill: darkred;
         }
       }
+    }
+  }
+  &-rick {
+    position: relative;
+    & img {
+      max-width: 150px;
+      position: absolute;
+      bottom: -100px;
+      right: -60px;
+    }
+    @media (max-width: 600px) {
+      display: none;
     }
   }
 }

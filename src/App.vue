@@ -28,8 +28,8 @@ export default {
     margin: 0;
     padding: 0;
     text-align: center;
-    color: #2c3e50;
-    background-color: $backgroundBlack;
+    color: $fontColor;
+    background-color: $backgroundDark;
   }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
