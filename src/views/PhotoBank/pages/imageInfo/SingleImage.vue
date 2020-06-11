@@ -1,5 +1,6 @@
 <template>
   <div>
+    <back-button to="PhotoBank"/>
     <loading v-if="loading"/>
     <div v-if="!loading">
       <div class="info-wrap">

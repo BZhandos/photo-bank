@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <back-button/>
     <p class="home-title">Welcome to <span>Photo Bank</span></p>
     <search/>
     <list-of-images/>

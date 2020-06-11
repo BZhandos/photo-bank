@@ -24,7 +24,7 @@
     </div>
 
     <div class="tags" v-if="desc.tags.length > 0">
-      <h3>Hashtags</h3>
+      <h3>Hashtags:</h3>
       <span v-for="tag in desc.tags"
             @click="$router.push({ path: '/search/'+ tag.title})"
       >
@@ -48,6 +48,10 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   &-title {
     text-align: left;
     margin-left: 20px;
@@ -59,6 +63,7 @@ export default {
   justify-content: start;
   align-items: center;
   margin-right: 20px;
+  min-width: 230px;
   & img {
     border-radius: 50%;
     margin: 10px;
@@ -77,6 +82,7 @@ export default {
 }
 .tags {
   max-width: 600px;
+  margin-left: 20px;
   text-align: left;
   cursor: pointer;
   & h3 {

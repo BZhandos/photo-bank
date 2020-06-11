@@ -9,6 +9,12 @@
 </template>
 <script>
 export default {
+  props: {
+    to: {
+      type: String,
+      default: 'CV'
+    }
+  },
   data () {
     return {
       visible: true
@@ -18,7 +24,7 @@ export default {
     goBackHandler () {
       this.visible = false
       window.setTimeout(() => {
-        this.$router.push('/')
+        this.$router.push({ name: this.to })
       }, 400)
     }
   }

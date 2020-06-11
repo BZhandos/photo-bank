@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    <back-button v-if="$route.path !== '/'" />
     <!--    TODO transition-->
     <router-view/>
     <!--    TODO transition-->
   </div>
 </template>
 <script>
-import BackButton from './components/UI/BackButton'
 
 export default {
-  components: {
-    BackButton
-  },
   computed: {
     auth () {
       return this.$store.getters.isAuthenticated
