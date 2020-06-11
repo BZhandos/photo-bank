@@ -16,9 +16,19 @@
         </div>
       </div>
     </div>
-    <div class="title">
-      {{desc.description}}
-      {{desc.alt_description}}
+
+    <div class="desc-wrap-title">
+      <h3>Description:</h3>
+      <p>{{desc.description}}</p>
+      <p>{{desc.alt_description}}</p>
+    </div>
+
+    <div class="tags" v-if="desc.tags.length > 0">
+      <h3>Hashtags</h3>
+      <span v-for="tag in desc.tags"
+            @click="$router.push({ path: '/search/'+ tag.title})"
+      >
+          #{{tag.title}}</span>
     </div>
   </div>
 </template>
@@ -34,12 +44,21 @@ export default {
 
 <style scoped lang="scss">
 .desc-wrap {
-  max-width: 300px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &-title {
+    text-align: left;
+    margin-left: 20px;
+    text-transform: capitalize;
+  }
 }
 .owner {
   display: flex;
   justify-content: start;
   align-items: center;
+  margin-right: 20px;
   & img {
     border-radius: 50%;
     margin: 10px;
@@ -48,20 +67,24 @@ export default {
   }
   &-info {
     text-align: left;
-    &-profile {
-      & p {
-        line-height: 0;
-      }
-    }
     &-insta {
       & a {
         text-decoration: none;
-        color: #57800a;
+        color: #ff1d5e;
       }
     }
   }
 }
-.title {
-  text-transform: capitalize;
+.tags {
+  max-width: 600px;
+  text-align: left;
+  cursor: pointer;
+  & h3 {
+    margin: 0;
+    color: #57800a;
+  }
+  & span:hover {
+    color: #9eccff;
+  }
 }
 </style>

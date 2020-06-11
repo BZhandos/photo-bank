@@ -9,15 +9,9 @@
                     :date="singleImg.created_at.slice(0,10)"
                     :location="singleImg.location.name"
         />
-        <description :desc="singleImg"/>
       </div>
-      <div class="tags">
-        <h3>Hashtags</h3>
-        <span v-for="tag in singleImg.tags"
-              @click="$router.push({ path: '/result/'+ tag.title})"
-        >
-          #{{tag.title}}</span>
-      </div>
+      <description :desc="singleImg"/>
+
     </div>
   </div>
 </template>
@@ -39,6 +33,7 @@ export default {
     loading: true
   }),
   beforeCreate () {
+    this.$scrollTo('body', 500, {})
     axios
       .get('https://api.unsplash.com/photos/' +
             this.$route.params.id
@@ -55,23 +50,10 @@ export default {
 <style scoped lang="scss">
 .info-wrap {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   @media (max-width: 1080px) {
     justify-content: start;
-  }
-}
-.tags {
-  text-align: left;
-  cursor: pointer;
-  width: 90%;
-  margin: 0 auto;
-  & h3 {
-    margin: 0;
-    color: #57800a;
-  }
-  & span:hover {
-    color: #9eccff;
+    flex-wrap: wrap-reverse;
   }
 }
 </style>
