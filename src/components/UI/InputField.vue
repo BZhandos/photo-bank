@@ -3,9 +3,8 @@
         <input @input="updateValue($event.target.value)"
                placeholder=" "
                :type= labelType
-               class="input-box"
+               class="input-wrap"
                :class="{error: labelValid}"
-               :style="{width: labelWidth + 'px'}"
         />
         <label  class="input-label">{{labelName}}</label>
         <transition name="errorLabel">
@@ -53,45 +52,37 @@ export default {
 
 <style scoped lang="scss">
 .input {
+    display: block;
     box-sizing: border-box;
-    margin-bottom: 15px;
+    margin: 15px;
     position: relative;
-    &-box {
-        border-radius: 3px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        padding: 12px 20px;
-        outline: none;
-    }
-    & input {
-        &:not(:placeholder-shown) ~ label {
-            top: -7px;
-            font-size: 10px;
-            color: #5264AE;
-            background-color: #fff;
-            padding: 0 5px;
-            border-radius: 2px;
-        }
-        &:focus ~ label {
-            top: -7px;
-            font-size: 10px;
-            color: #5264AE;
-            background-color: #fff;
-            padding: 0 5px;
-            border-radius: 2px;
-        }
+    &-wrap {
+      max-width: 100%;
+      width: 100%;
+      font-weight: 400;
+      color: #000000;
+      font-size: 17px;
+      line-height: 22px;
+      border: none;
+      border-radius: 3px;
+      padding: 30px 16px 12px;
+      transition: 0.3s ease font-size, top;
     }
     &-label {
-        color: #999;
-        font-size: 12px;
-        font-weight: normal;
-        position: absolute;
-        pointer-events: none;
-        left: 20px;
-        top: 12px;
-        transition:0.2s ease all;
-        -moz-transition:0.2s ease all;
-        -webkit-transition:0.2s ease all;
+      font-size: 17px;
+      line-height: 22px;
+      color: black;
+      transition: 0.3s ease font-size, top;
+      position: absolute;
+      left: 16px;
+      top: 20px;
+      padding-right: 16px;
+      pointer-events: none;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 80px);
     }
     &-required {
         line-height: 0;
@@ -100,6 +91,36 @@ export default {
         color: red;
     }
 }
+.input {
+  &-wrap {
+    &:not(:placeholder-shown) ~ label {
+      font-size: 14px;
+      line-height: 15px;
+      transition: 0.3s ease font-size, top;
+      top: 12px;
+      color: #19639A;
+    }
+    &:focus {
+      & + .input-label {
+        font-size: 14px;
+        line-height: 15px;
+        transition: 0.3s ease font-size, top;
+        top: 12px;
+        color: #19639A;
+      }
+    }
+  }
+}
+
+.input-wrap.input-wrap--filled {
+  .input-wrap__label {
+    font-size: 14px;
+    line-height: 15px;
+    transition: 0.3s ease font-size, top;
+    top: 12px;
+  }
+}
+
 .error {
     border: 1px solid palevioletred;
 }

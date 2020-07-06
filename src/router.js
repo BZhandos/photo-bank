@@ -31,6 +31,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Samples/SpeedReading/SpeedReading.vue')
     },
     {
+      path: '/da-data',
+      name: 'DaData',
+      component: () => import(/* webpackChunkName: "about" */ './views/Samples/DaData/DaData.vue')
+    },
+    {
       path: '/image/:id',
       component: SingleImage
     },

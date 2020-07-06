@@ -51,6 +51,7 @@ export default {
       },
       {
         title: 'technodom.kz',
+        name: 'DaData',
         subtitle: 'Only main page'
       },
       {
