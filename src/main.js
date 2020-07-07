@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import store from './storage/store'
 import Vuelidate from 'vuelidate/src'
 import VueScrollTo from 'vue-scrollto'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import VueGtag from 'vue-gtag';
+import VueGtag from 'vue-gtag'
 import 'swiper/css/swiper.css'
 import components from '@/components/components'
 

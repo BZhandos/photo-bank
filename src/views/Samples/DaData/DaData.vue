@@ -5,14 +5,16 @@
         labelName="Поиск организаций"
         v-model="searchingData"
       />
-      <button @click="search">Ok</button>
+      <button class="da-data-button"
+              :style="{'background-color': searchingData.length > 0? '#4CAF50' : '#3b823f'}"
+              @click="search">Search</button>
     </div>
 
     <div class="da-data-field" v-if="dataList.length>0">
       <div  class="da-data-field-select">
         <select v-model="selected" v-if="dataList">
           <option v-for="(item, index) in dataList" :key="index" :value="item">
-            {{ item.data.name.short?  item.data.name.short : item.value}}
+            {{ item.name?  item.name : item.value}}
           </option>
         </select>
       </div>
@@ -22,7 +24,11 @@
          class="list-wrap">
       <div v-for="(item, index) in list" :key="index">
         <div class="list-wrap-box" @click="deleteHanlder(index)">
-          {{ item.value }}
+          <p class="list-wrap-box__status"
+             :style="{color: item.status=== 'ACTIVE'? 'green' : 'red'}">
+            {{item.status}}
+          </p>
+          <p class="list-wrap-box__name">  {{ item.value }} </p>
         </div>
       </div>
     </div>
@@ -38,24 +44,32 @@ export default {
     dataList: [],
     selected: '',
     searchingData: '',
-    list: [],
     loading: false
   }),
   watch: {
     selected (newVal, oldVal) {
       if (newVal !== oldVal) {
-        this.list.push(newVal)
+        this.$store.dispatch('dadata/addToList', newVal)
       }
+    }
+  },
+  computed: {
+    list () {
+      return this.$store.getters['dadata/getList']
     }
   },
   methods: {
     search () {
-      API.ownTransfer(this.searchingData).then(response => {
-        this.dataList = response.data
-      }).catch(e => {})
+      if (this.searchingData.length > 0) {
+        API.searchInDaData(this.searchingData).then(response => {
+          console.log(response);
+          this.dataList = response.data
+        }).catch(e => {})
+      }
+
     },
     deleteHanlder (index) {
-      this.list.splice(index, 1)
+      this.$store.dispatch('dadata/deleteFromList', index)
     }
   }
 }
@@ -85,6 +99,18 @@ export default {
       }
     }
   }
+  &-button {
+    background-color: #3b823f;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 14px 40px;
+  }
 }
 .list-wrap {
   display: flex;
@@ -97,8 +123,18 @@ export default {
     color: #0b0c16;
     cursor: pointer;
     transition: .5s;
+    max-width: 320px;
+    border-radius: 5px;
+    box-shadow: 5px 5px;
     &:hover {
       background-color: #ff724f;
+      transform: scale(1.02)
+    }
+    &__status {
+      font-weight: bold;
+    }
+    &__name {
+      font-size: 12px;
     }
   }
 }
