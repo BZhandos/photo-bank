@@ -1,14 +1,15 @@
 <template>
-  <div class="cv-wrap">
-    <HeaderBlock v-if="isDesktop"/>
-    <MobileHeader v-else />
-    <section01 />
-    <section02 />
-    <section03 />
-    <section04/>
-    <section05/>
-    <footer-block />
-  </div>
+    <div class="main-wrap">
+      <HeaderBlock v-if="isDesktop"/>
+      <MobileHeader v-else />
+      <div>
+        <section01 />
+        <section02 />
+        <section03 />
+        <section04/>
+        <section05/>
+      </div>
+    </div>
 </template>
 
 <script>
