@@ -1,32 +1,51 @@
 <template>
-  <div class="section-box s1-wrap" id="section1">
-    <div class="s1-wrap-hours">
-      <p class="s1-wrap-hours-quote">
+  <div class="section-box" id="section1">
+    <div class="quote-wrap">
+      <p class="quote-wrap-text">
         The principle holds that <span>10,000</span> hours of "deliberate practice" are needed to become world-class in any field.
       </p>
-      <p class="s1-wrap-hours-mine">And I had
+      <p class="quote-wrap-number">And I had
         <span>
            <animated-number :value="hours" :formatValue="formatToHours" :duration="duration"/>
         </span>
         hours.
       </p>
-
     </div>
-    <div class="s1-wrap-slider">
-      <div class="s1-wrap-slider-intro">
+
+    <div class="s1-wrap">
+
+      <div class="s1-wrap-r">
+        <img src="@/assets/images/me.png"/>
         <h1>Front-End Developer</h1>
         <p>{{text}}<span class="section-wrap-intro-typed-cursor">|</span>
         </p>
       </div>
-      <div class="s1-wrap-slider-img">
-        <img src="@/assets/images/me.png"/>
+
+      <div class="s1-wrap-l">
+        <h1>about me</h1>
+        <div class="s1-wrap-l-list">
+          <p class="s1-wrap-l-list__item">25 years</p>
+          <p class="s1-wrap-l-list__item">Dev </p>
+          <p class="s1-wrap-l-list__item">Freelance</p>
+        </div>
+        padding-left: 3px;
+        color: #0b0c16;
+        animation: flash .6s infinite;
+        Passioned web developer with in excess of {{expYears}} years (or {{expMonths}} months or   {{expDays}} days) extensive experience in frontline
+        development and testing of web-based applications.
+        My strong background includes front-end development using HTML5, CSS3, SAAS/SCSS, JavaScript, <b>Vue.js</b> and
+        Bootstrap – in addition to knowledge of version control systems such as Git, and a thorough understanding of object-oriented
+        programming and design patterns.
+        In my previous roles, I have worked closely with internal Product & Marketing Teams, and external
+        agencies when required, to deliver innovative features across all digital touchpoints, and produce concepts into fully-functional
+        user-validated product.
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { differenceInCalendarDays } from 'date-fns'
+import { differenceInCalendarDays, differenceInMonths, differenceInYears } from 'date-fns'
 import AnimatedNumber from "animated-number-vue"
 
 export default {
@@ -47,10 +66,18 @@ export default {
     curText: '',
     currentTextIndex: 0,
     index: 0,
-    duration: 3000
+    duration: 3000,
+    starterDay: new Date(2017, 7, 1, 0, 0)
   }),
-  watch: {
-    number (newValue) {
+  computed: {
+    expDays () {
+      return differenceInCalendarDays(new Date(), this.starterDay)
+    },
+    expMonths () {
+      return differenceInMonths(new Date(), this.starterDay)
+    },
+    expYears () {
+      return differenceInYears(new Date(), this.starterDay)
     }
   },
   created () {
@@ -60,8 +87,6 @@ export default {
     this.$gtag.pageview({
       page_path: '/home'
     })
-  },
-  computed: {
   },
   methods: {
     formatToHours (value) {
@@ -99,75 +124,69 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.quote-wrap {
+  padding-top: 20px;
+  margin-bottom: 5%;
+  font-size: 16px;
+  &-text {
+    & span {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  &-number {
+    color: #FAC921;
+    & span {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
+
 .s1-wrap {
-  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
   display: flex;
-  flex-direction: column;
-  &-hours {
-    padding-top: 20px;
-    margin-bottom: 5%;
-    &-quote {
-      font-size: 16px;
-      & span {
-        font-size: 16px;
-        font-weight: bold;
-      }
-    }
-    &-mine {
-      font-size: 16px;
-      color: #FAC921;
-      & span {
-        font-size: 24px;
-        font-weight: bold;
-      }
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  &-r {
+    max-width: 650px;
+    & img {
+      width: 90%;
     }
   }
-  &-slider {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    @media (max-width: 600px) {
-      flex-wrap: wrap;
-    }
-    &-intro {
-      background-color: #2D2D32;
+  &-l {
+    max-width: 450px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    text-align: justify;
+    color: #888888;
+    & h1 {
+      font-size: 63px;
       color: white;
-      padding: 60px 32px;
-      max-width: 430px;
-      width: 85%;
-      outline: 4px double #7dcfd8;
-      outline-offset: 8px;
-      animation: border-color 7s infinite;
-      margin: 18px 20px;
-      & h1 {
-        color: rgba(255, 255, 255, 0.71);
-      }
-      & p {
-        height: 30px;
-      }
-      &-typed-cursor {
-        padding-left: 3px;
-        color: #0b0c16;
-        animation: flash .6s infinite;
-      }
     }
-    &-img {
-      max-width: 600px;
-      & img {
-        width: 95%;
+    &-list {
+      display: flex;
+      &__item {
+        font-size: 18px;
+        &:not(:last-child) {
+          margin-right: 15px;
+          &::after {
+            content: '/';
+            font-weight: bold;
+            font-style: italic;
+            opacity: 0.25;
+            padding-left: 15px;
+          }
+        }
       }
     }
   }
+
 }
 @keyframes flash {
   0% { opacity: 0 }
   100% { opacity: 1}
-}
-@keyframes border-color {
-  0% { outline-color: white }
-  33% { outline-color: #42b983 }
-  66% { outline-color: #42b983 }
-  100% { outline-color: white }
 }
 
 </style>

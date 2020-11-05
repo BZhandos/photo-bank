@@ -2,7 +2,7 @@
     <div class="main-wrap">
       <HeaderBlock v-if="isDesktop"/>
       <MobileHeader v-else />
-      <div>
+      <div class="main-wrap-box">
         <section01 />
         <section02 />
         <section03 />
@@ -20,7 +20,6 @@ import Section02 from './Section_02'
 import Section03 from './Section_03'
 import Section04 from './Section_04'
 import Section05 from './Section_05'
-import FooterBlock from './Footer'
 
 import checkViewport from '../../helpers/checkViewport'
 
@@ -34,8 +33,7 @@ export default {
     Section02,
     Section03,
     Section04,
-    Section05,
-    FooterBlock
+    Section05
   }
 }
 </script>

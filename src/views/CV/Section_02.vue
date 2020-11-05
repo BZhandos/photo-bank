@@ -1,5 +1,5 @@
 <template>
-  <div class="section-box s2-wrap" id="section2">
+  <div class="s2-wrap" id="section2">
     <div class="s2-wrap-intro">
       <h1>Front-End Developer</h1>
       <p class="intro-box__desc">
