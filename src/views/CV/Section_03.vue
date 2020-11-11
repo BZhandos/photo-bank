@@ -52,7 +52,7 @@ export default {
         via: 'linkedin',
         img: 'zhazira_i.jpeg',
         status: 'client from atsmartstudy.com',
-        content: 'A very talented specialist in his field. Zhandos understands the problem well and offers his own solutions. Quality of work 10 out of 10. Thank you and  looking forward to working with you again!'
+        content: 'A very talented specialist in his field. Zhandos understands the problem well and offers his own solutions. Thank you and  looking forward to working with you again!'
       }
     ],
     swiperOption: {

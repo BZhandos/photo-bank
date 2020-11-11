@@ -36,6 +36,9 @@
         In my previous roles, I have worked closely with internal Product & Marketing Teams, and external
         agencies when required, to deliver innovative features across all digital touchpoints, and produce concepts into fully-functional
         user-validated product.
+        <a class="s1-wrap-l-list__link" target="_blank" href="https://drive.google.com/file/d/1u1fc3ZZHIJe3KjWQrLIrtTYp-6FyKAxe/view?usp=sharing">
+          <i class="fa fa-vcard"></i> CV is here</a>
+
       </div>
     </div>
   </div>
@@ -184,6 +187,11 @@ export default {
             padding-left: 15px;
           }
         }
+      }
+      &__link {
+        color: #e3e058;
+        outline: none;
+        text-decoration: none;
       }
     }
   }
