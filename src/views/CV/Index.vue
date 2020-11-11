@@ -4,9 +4,9 @@
       <MobileHeader v-else />
       <div class="main-wrap-box">
         <section01 />
-        <section02 />
-        <section03 />
+<!--        <section02 />-->
         <section04/>
+        <section03 />
         <section05/>
       </div>
     </div>

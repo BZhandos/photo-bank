@@ -17,7 +17,7 @@
       <div class="s1-wrap-r">
         <img src="@/assets/images/me.png"/>
         <h1>Front-End Developer</h1>
-        <p>{{text}}<span class="section-wrap-intro-typed-cursor">|</span>
+        <p>{{text}}<span class="s1-wrap-r-typing"> |</span>
         </p>
       </div>
 
@@ -28,9 +28,6 @@
           <p class="s1-wrap-l-list__item">Dev </p>
           <p class="s1-wrap-l-list__item">Freelance</p>
         </div>
-        padding-left: 3px;
-        color: #0b0c16;
-        animation: flash .6s infinite;
         Passioned web developer with in excess of {{expYears}} years (or {{expMonths}} months or   {{expDays}} days) extensive experience in frontline
         development and testing of web-based applications.
         My strong background includes front-end development using HTML5, CSS3, SAAS/SCSS, JavaScript, <b>Vue.js</b> and
@@ -146,36 +143,44 @@ export default {
 .s1-wrap {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   flex-wrap: wrap;
   &-r {
-    max-width: 650px;
+    max-width: 450px;
     & img {
       width: 90%;
     }
+    &-typing {
+      padding-left: 3px;
+      color: red;
+      animation: flash .6s infinite;
+    }
   }
   &-l {
-    max-width: 450px;
-    font-size: 13px;
+    max-width: 555px;
+    font-size: 15px;
+    line-height: 1.73;
     letter-spacing: 0.5px;
     font-weight: 300;
     text-align: justify;
     color: #888888;
     & h1 {
       font-size: 63px;
+      line-height: 1;
       color: white;
     }
     &-list {
       display: flex;
       &__item {
         font-size: 18px;
+        font-weight: bold;
+        color: #42B983;
         &:not(:last-child) {
           margin-right: 15px;
           &::after {
             content: '/';
             font-weight: bold;
             font-style: italic;
-            opacity: 0.25;
+            color: #e3e058;
             padding-left: 15px;
           }
         }

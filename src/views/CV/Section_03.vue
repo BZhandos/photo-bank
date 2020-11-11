@@ -5,8 +5,6 @@
       subtitle="The reviews of my happy customers are collected from everywhere(upwork.com, linkedin.com) in this amazing swiper, please check this out!"
     />
     <swiper class="swiper"
-            @slideChange="slideChanges"
-            @init="slideChanges"
             :options="swiperOption"
             ref="my-swiper">
       <swiper-slide v-for="(item, index) in slides" :key="index">
@@ -73,9 +71,6 @@ export default {
     }
   },
   methods: {
-    slideChanges () {
-      console.log(this.swiper.activeIndex)
-    }
   }
 }
 </script>

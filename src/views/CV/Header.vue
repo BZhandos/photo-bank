@@ -26,23 +26,16 @@ export default {
         name: 'Home',
         routeName: 'section1',
         subtitle: 'Welcome!',
-        icon: 'fa fa-user',
+        icon: 'fa fa-home',
         inViewPort: true
       },
-      {
-        name: 'About',
-        routeName: 'section2',
-        subtitle: 'Intro',
-        icon: 'fa fa-th-large',
-        inViewPort: false
-      },
-      {
-        name: 'My clients',
-        routeName: 'section3',
-        subtitle: 'Testimonial',
-        icon: 'fa fa-home',
-        inViewPort: false
-      },
+      // {
+      //   name: 'About',
+      //   routeName: 'section2',
+      //   subtitle: 'Intro',
+      //   icon: 'fa fa-th-large',
+      //   inViewPort: false
+      // },
       {
         name: 'Skills',
         routeName: 'section4',
@@ -51,10 +44,17 @@ export default {
         inViewPort: false
       },
       {
+        name: 'My clients',
+        routeName: 'section3',
+        subtitle: 'Testimonial',
+        icon: 'fa fa-comments-o',
+        inViewPort: false
+      },
+      {
         name: 'My works',
         routeName: 'section5',
         subtitle: 'Welcome here!',
-        icon: 'fa fa-th-large',
+        icon: 'fa fa-code',
         inViewPort: false
       }
     ],

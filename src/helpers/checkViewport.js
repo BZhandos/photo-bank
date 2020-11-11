@@ -20,10 +20,10 @@ export default {
       return this.width >= 1024
     },
     isTablet () {
-      return this.width < 1024 && this.width >= 768;
+      return this.width < 1024 && this.width >= 768
     },
     isMobile () {
-      return this.width < 768 && this.width >= 320;
+      return this.width < 768 && this.width >= 320
     }
   },
   methods: {
@@ -42,7 +42,6 @@ export default {
       window.addEventListener('resize', () => {
         _this.width = window.innerWidth
       })
-
     })
   }
 }
