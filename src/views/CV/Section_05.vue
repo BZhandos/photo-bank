@@ -35,6 +35,11 @@ export default {
         img: 'reading.png'
       },
       {
+        title: 'CrtWeb.ru',
+        subtitle: 'Интернет-агенство  "Creative"',
+        name: 'CrtWeb'
+      },
+      {
         title: 'Vuex',
         subtitle: 'and Vulidate'
       },

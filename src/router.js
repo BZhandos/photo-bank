@@ -59,6 +59,11 @@ export default new Router({
     },
     {
       path: '/grid-box',
+      name: 'CrtWeb',
+      component: () => import('./views/Samples/CrtWeb/CrtWeb.vue')
+    },
+    {
+      path: '/grid-box',
       name: 'grid-box',
       component: () => import('./views/Samples/GridBox.vue')
     },
