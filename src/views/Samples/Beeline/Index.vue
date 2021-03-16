@@ -15,7 +15,7 @@
        </div>
      </div>
     </div>
-    <div class="container list-wrap" v-if="searchResult.length > 0">
+    <div class="container p-2" v-if="searchResult.length > 0">
       <b-table
         class="table-dark"
         :per-page="10"
@@ -34,7 +34,7 @@
       <b-pagination
         v-if="showPagination"
         v-model="currentPage"
-        :total-rows="resultAmount"
+        :total-rows="maxPages"
         :per-page="10"
         aria-controls="my-table"
       ></b-pagination>
@@ -44,6 +44,9 @@
     <b-modal id="more-info-modal" hide-footer hide-header>
       <div class="d-block text-center text-info">
         <h3>{{currentItem.username}}</h3>
+        <div>
+          <img :src="currentItem.imgUrl" />
+        </div>
       </div>
       <b-button class="mt-3" block @click="closeModal">ok</b-button>
     </b-modal>
@@ -58,7 +61,7 @@ export default {
     searchEmtpy: false,
     searchingItem: '',
     searchResult: '',
-    resultAmount: 0,
+    maxPages: 0,
     currentPage: 1,
     fields: [
       {
@@ -89,27 +92,28 @@ export default {
   },
   computed: {
     showPagination () {
-      return this.resultAmount > 10
+      return this.maxPages > 10
     }
   },
   methods: {
     searchHandler () {
       API.searchImageUnsplash(this.searchingItem, this.currentPage).then(response => {
-        this.resultAmount = response.data.total_pages
+        this.maxPages = response.data.total_pages
         this.searchResult = response.data.results.map(item => {
           return {
             id: item.id,
             username: item.user.username,
             preview: item.urls.thumb,
-            likes: item.likes
+            likes: item.likes,
+            image: item.urls.small
           }
         })
-        console.log('clicked', this.searchResult)
       }).catch(e => {})
     },
     rowClickedHandler (item) {
       this.currentItem = {
-        username: item.username
+        username: item.username,
+        imgUrl: item.image
       }
       this.$bvModal.show('more-info-modal')
     },
@@ -121,5 +125,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
