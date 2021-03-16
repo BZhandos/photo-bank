@@ -31,6 +31,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Samples/SpeedReading/SpeedReading.vue')
     },
     {
+      path: '/beeline',
+      name: 'Beeline',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/Samples/Beeline/Index.vue')
+    },
+    {
       path: '/da-data',
       name: 'DaData',
       component: () => import(/* webpackChunkName: "about" */ './views/Samples/DaData/DaData.vue')

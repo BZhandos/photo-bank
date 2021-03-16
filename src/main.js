@@ -12,6 +12,10 @@ import components from '@/components/components'
 import Input from './components/UI/InputField'
 import Dropdown from './components/UI/Dropdown'
 
+import { BootstrapVue } from 'bootstrap-vue'
+
+Vue.use(BootstrapVue)
+
 Vue.component('my-input', Input)
 Vue.component('my-dropdown', Dropdown)
 

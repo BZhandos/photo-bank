@@ -27,6 +27,37 @@ function postRequest (
   })
 }
 
+function getRequest (
+  url,
+  data,
+  headers = {},
+  type = 'application/json;charset=UTF-8',
+  responseType = 'text'
+) {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(url, {
+        params: {
+          ...data
+        },
+        responseType,
+        headers: {
+          'Content-type': type,
+          ...headers
+        }
+      })
+      .then(response => {
+        if (response.status === 200) {
+          resolve(response.data)
+        }
+      })
+      .catch(error => {
+        reject(error)
+      })
+  })
+}
+
 export default {
-  postRequest
+  postRequest,
+  getRequest
 }

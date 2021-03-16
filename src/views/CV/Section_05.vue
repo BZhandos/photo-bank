@@ -35,6 +35,12 @@ export default {
         img: 'reading.png'
       },
       {
+        title: 'Beeline',
+        subtitle: 'jsDelivr search',
+        name: 'Beeline',
+        img: 'beeline.jpg'
+      },
+      {
         title: 'CrtWeb.ru',
         subtitle: 'Интернет-агенство  "Creative"',
         name: 'CrtWeb'
