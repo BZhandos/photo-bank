@@ -38,17 +38,30 @@
         :per-page="10"
         aria-controls="my-table"
       ></b-pagination>
-
     </div>
 
     <b-modal id="more-info-modal" hide-footer hide-header>
       <div class="d-block text-center text-info">
-        <h3>{{currentItem.username}}</h3>
-        <div>
-          <img :src="currentItem.imgUrl" />
-        </div>
+        <b-card class="main-image" :img-src="currentItem.imgUrl" img-alt="Card image" img-top>
+          <template #header>
+            <h4 class="mb-0">
+              <span class="text-success">Author name: </span>
+              {{ currentItem.username }}
+            </h4>
+          </template>
+
+          <b-card-body>
+            <b-card-title>{{currentItem.location}}</b-card-title>
+            <b-card-sub-title class="mb-2">
+              <img class="profile-box" :src="currentItem.profile_image " />
+            </b-card-sub-title>
+            <b-card-text>
+             {{ currentItem.bio }}
+            </b-card-text>
+          </b-card-body>
+          <b-button class="mt-3" block @click="closeModal">ok</b-button>
+        </b-card>
       </div>
-      <b-button class="mt-3" block @click="closeModal">ok</b-button>
     </b-modal>
   </div>
 </template>
@@ -60,7 +73,7 @@ export default {
   data: () => ({
     searchEmtpy: false,
     searchingItem: '',
-    searchResult: '',
+    searchResult: [],
     maxPages: 0,
     currentPage: 1,
     fields: [
@@ -99,21 +112,28 @@ export default {
     searchHandler () {
       API.searchImageUnsplash(this.searchingItem, this.currentPage).then(response => {
         this.maxPages = response.data.total_pages
-        this.searchResult = response.data.results.map(item => {
+        const tempResponse = response.data.results.map(item => {
           return {
             id: item.id,
-            username: item.user.username,
+            username: item.user.name,
             preview: item.urls.thumb,
             likes: item.likes,
-            image: item.urls.small
+            image: item.urls.small,
+            location: item.user.location,
+            bio: item.user.bio,
+            profile_image: item.user.profile_image.medium
           }
         })
+        this.searchResult.push(...tempResponse)
       }).catch(e => {})
     },
     rowClickedHandler (item) {
       this.currentItem = {
         username: item.username,
-        imgUrl: item.image
+        imgUrl: item.image,
+        location: item.location,
+        bio: item.bio,
+        profile_image: item.profile_image
       }
       this.$bvModal.show('more-info-modal')
     },
@@ -125,4 +145,11 @@ export default {
 </script>
 
 <style scoped>
+.main-image img{
+  max-height: 300px;
+}
+.profile-box {
+  border: 1px solid green;
+  border-radius: 100%;
+}
 </style>
