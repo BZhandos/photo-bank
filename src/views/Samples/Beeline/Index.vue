@@ -4,11 +4,13 @@
       <h1>A free CDN for Open Source</h1>
      <div class="container">
        <div class="col-sm-4 m-auto">
-         <form @submit.prevent="searchHandler">
+         <form @submit.prevent="next">
            <div class="form-group">
              <label for='searchInput'>What are you looking for</label>
              <input type="text" id='searchInput' v-model="searchingItem" class="form-control">
-             <small v-show="searchEmtpy" class="form-text text-danger">We'll never share your email with anyone else.</small>
+             <small v-show="showHint" class="form-text text-danger">Enter at least 3 characters. For instance
+               <span class="wall-e-wrap" @click="someFun">WALL-E</span>
+             </small>
            </div>
            <button type="submit" class="btn btn-primary m-2">Search</button>
          </form>
@@ -71,7 +73,7 @@ import API from '@/helpers/API'
 export default {
   name: 'Index',
   data: () => ({
-    searchEmtpy: false,
+    showHint: false,
     searchingItem: '',
     searchResult: [],
     maxPages: 0,
@@ -99,7 +101,7 @@ export default {
   watch: {
     currentPage (newPageNumber, oldVal) {
       if (newPageNumber !== oldVal) {
-        this.searchHandler(newPageNumber)
+        this.searchHandler()
       }
     }
   },
@@ -109,6 +111,14 @@ export default {
     }
   },
   methods: {
+    next () {
+      if (this.searchingItem.length > 2) {
+        this.currentPage = 1
+        this.searchResult.length = 0
+        this.searchHandler()
+        this.showHint = false
+      } else this.showHint = true
+    },
     searchHandler () {
       API.searchImageUnsplash(this.searchingItem, this.currentPage).then(response => {
         this.maxPages = response.data.total_pages
@@ -138,6 +148,15 @@ export default {
     },
     closeModal () {
       this.$bvModal.hide('more-info-modal')
+    },
+    someFun () {
+      let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/Whoa.mp3')
+      audio.play()
+      this.currentPage = 1
+      this.searchResult.length = 0
+      this.searchingItem = 'WALL-E'
+      this.searchHandler()
+      this.showHint = false
     }
   }
 }
@@ -147,5 +166,11 @@ export default {
 .profile-box {
   border: 1px solid green;
   border-radius: 100%;
+}
+.wall-e-wrap {
+  font-size: 18px;
+  cursor: pointer;
+  color: darkorange;
+  text-decoration: underline;
 }
 </style>
