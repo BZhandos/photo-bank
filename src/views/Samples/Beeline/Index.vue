@@ -118,7 +118,6 @@ export default {
             username: item.user.name,
             preview: item.urls.thumb,
             likes: item.likes,
-            image: item.urls.small,
             location: item.user.location,
             bio: item.user.bio,
             profile_image: item.user.profile_image.medium
@@ -130,7 +129,7 @@ export default {
     rowClickedHandler (item) {
       this.currentItem = {
         username: item.username,
-        imgUrl: item.image,
+        imgUrl: item.preview,
         location: item.location,
         bio: item.bio,
         profile_image: item.profile_image
@@ -145,9 +144,6 @@ export default {
 </script>
 
 <style scoped>
-.main-image img{
-  max-height: 300px;
-}
 .profile-box {
   border: 1px solid green;
   border-radius: 100%;
