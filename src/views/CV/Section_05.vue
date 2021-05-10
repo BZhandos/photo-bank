@@ -41,14 +41,20 @@ export default {
         img: 'beeline.jpg'
       },
       {
+        title: 'Technodom',
+        subtitle: 'Tabel with checkboxes',
+        name: 'Technodom',
+        img: 'technodom.jpeg'
+      },
+      {
         title: 'CrtWeb.ru',
         subtitle: 'Интернет-агенство  "Creative"',
         name: 'CrtWeb'
       },
-      {
-        title: 'Vuex',
-        subtitle: 'and Vulidate'
-      },
+      // {
+      //   title: 'Vuex',
+      //   subtitle: 'and Vulidate'
+      // },
       {
         title: 'Music',
         subtitle: 'Lets be Dj'
