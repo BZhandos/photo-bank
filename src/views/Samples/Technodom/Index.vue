@@ -9,8 +9,10 @@
       :items="list"
       :fields="fields"
       :current-page="currentPage"
+      :striped="true"
       small
-      fixed
+      dark
+      :responsive="true"
     >
       <template v-slot:cell(more)="data">
         <div>
