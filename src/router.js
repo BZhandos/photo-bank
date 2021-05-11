@@ -4,6 +4,8 @@ import Home from './views/PhotoBank/Home.vue'
 import SingleImage from './views/PhotoBank/pages/imageInfo/SingleImage'
 import Search from './views/PhotoBank/Result'
 
+import TechnodomUserInfo from './views/Samples/Technodom/TechnodomUserInfo'
+
 Vue.use(Router)
 
 export default new Router({
@@ -39,12 +41,16 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Samples/Beeline/Index.vue')
     },
     {
-      path: '/technodom',
+      path: '/technodom/user',
       name: 'Technodom',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Samples/Technodom/Index.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/Samples/Technodom/Index.vue'),
+      children: [
+        {
+          path: ':id',
+          name: 'TechnodomUserInfo',
+          component: TechnodomUserInfo,
+        }
+      ]
     },
     {
       path: '/da-data',

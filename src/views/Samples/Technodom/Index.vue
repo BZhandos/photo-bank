@@ -1,49 +1,66 @@
 <template>
   <div class="container mt-5">
-    <h3>Hello world from Technodom!</h3>
-    <b-table
-      class="table-dark"
-      :per-page="5"
-      :busy="loading"
-      :hover="true"
-      :items="list"
-      :fields="fields"
-      :current-page="currentPage"
-      :striped="true"
-      small
-      dark
-      :responsive="true"
-    >
-      <template v-slot:cell(more)="data">
-        <div>
-          <b-checkbox
-            @change="toggleCheckbox(data.item.id)"
-            :disabled="(currentActive === 1 && lastActiveID.id === data.item.id)"
-            v-model="data.item.isChecked"
-          />
-        </div>
-      </template>
+    <template v-if = "$route.name === 'Technodom'">
+      <h3>Hello world from Technodom!</h3>
+      <b-table
+        class="table-dark"
+        :per-page="5"
+        :busy="loading"
+        :hover="true"
+        :items="list"
+        :fields="fields"
+        :current-page="currentPage"
+        :striped="true"
+        small
+        dark
+        :responsive="true"
+      >
+        <template v-slot:cell(checkbox)="data">
+          <div>
+            <b-checkbox
+              @change="toggleCheckbox(data.item.id)"
+              :disabled="(currentActive === 1 && lastActiveID.id === data.item.id) || list.length === 1"
+              v-model="data.item.isChecked"
+            />
+          </div>
+        </template>
+        <template v-slot:cell(more)="data">
+          <div class="action"
+            @click="goToUserPage(data.item.id)">
+            подробнее
+          </div>
+        </template>
 
-      <template #table-busy>
-        <div class="text-center text-danger my-2">
-          <b-spinner class="align-middle"></b-spinner>
-          <strong> Loading...</strong>
-        </div>
-      </template>
-    </b-table>
-    <b-pagination
-      v-if="showPagination"
-      v-model="currentPage"
-      :total-rows="maxPages"
-      :per-page="5"
-      aria-controls="my-table"
-    ></b-pagination>
+        <template v-slot:cell(remove)="data">
+          <div class="action danger"
+               @click="removeUserById(data.item.id)">
+            x
+          </div>
+        </template>
 
-    <div class="mt-5">
-      <b-button variant="outline-primary" @click="simulateGetRequest">
+        <template #table-busy>
+          <div class="text-center text-danger my-2">
+            <b-spinner class="align-middle"></b-spinner>
+            <strong> Loading...</strong>
+          </div>
+        </template>
+      </b-table>
+      <b-pagination
+        v-if="showPagination"
+        v-model="currentPage"
+        :total-rows="maxPages"
+        :per-page="5"
+        aria-controls="my-table"
+      ></b-pagination>
+      <div class="mt-5">
+        <b-button variant="outline-primary" @click="simulateGetRequest">
           Tap to simulate get Request
-      </b-button>
-    </div>
+        </b-button>
+      </div>
+    </template>
+    <template v-else>
+      <router-view />
+    </template>
   </div>
 </template>
 
@@ -53,7 +70,7 @@ const getJsonResponse = () => {
     setTimeout(() => {
       const DATA = require('./list.json')
       resolve(DATA)
-    }, 2000)
+    }, 1500)
   })
 }
 
@@ -65,6 +82,10 @@ export default {
     list: [],
     currentPage: 1,
     fields: [
+      {
+        key: 'checkbox',
+        label: ' '
+      },
       {
         key: 'id',
         label: 'ID'
@@ -84,6 +105,10 @@ export default {
       {
         key: 'website',
         label: 'website'
+      },
+      {
+        key: 'remove',
+        label: ' '
       }
     ],
     currentActive: 10,
@@ -105,7 +130,9 @@ export default {
     },
     simulateGetRequest () {
       this.currentPage = 1
-      // симляция запроса на сервер с намеренной задержкой на 2 сек
+      this.currentActive = 10
+      this.lastActiveID = null
+      // симляция запроса на сервер с намеренной задержкой на 1.5 сек
       this.getRequest().then((response) => {
         if (response) {
           this.list = response.map((item) => {
@@ -126,6 +153,13 @@ export default {
           return item.isChecked === true
         })
       }
+    },
+    goToUserPage (id) {
+      this.$router.push({ name: 'TechnodomUserInfo', params: { id: id } })
+    },
+    removeUserById (id) {
+      const index = this.list.findIndex(x => x.id === id)
+      this.list.splice(index, 1)
     }
   },
   created () {
@@ -134,6 +168,18 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.action {
+  cursor: pointer;
+  transition: color .3s;
+  &:hover {
+    color: greenyellow;
+  }
+}
+.danger {
+  color: red;
+  &:hover {
+    color: darkred;
+  }
+}
 </style>
